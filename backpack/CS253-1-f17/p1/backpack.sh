@@ -10,9 +10,17 @@ dest="$1"
 make
 
 #Make sure the program built
-if [ ! -e "hello" ];then
+if [ ! -e "myprog" ];then
   echo "P1: FAIL reason: Did not build the right executable" >> $dest
   exit 1 # fail the build
+fi
+
+#Make sure the run target builds and executes
+output=$(./myprog)
+if [ "$?" != 0 ];then
+        #We failed
+        echo "P1: FAIL make run" >> $dest
+        exit 0
 fi
 
 #Make sure the clean target works
@@ -23,22 +31,6 @@ if [ "$?" != 0 ];then
         exit 0
 fi
 
-#Make sure the run target builds and executes
-output=$(make run)
-if [ "$?" != 0 ];then
-        #We failed
-        echo "P1: FAIL make run" >> $dest
-        exit 0
-fi
-
-# Check program output to make sure run actually executes program
-if [[ ! $output =~ ^.*Invoking.*works.*$ ]];then
-        #We failed
-        echo "P1: FAIL make run does not execute program" >> $dest
-        exit 0
-fi
-
 #Clean twice to make sure -f flag is used
-make clean
 make clean
 echo "P1: PASS" >> $dest
