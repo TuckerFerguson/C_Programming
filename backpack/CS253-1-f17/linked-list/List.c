@@ -1,122 +1,148 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "List.h"
 
-/*
 
-    list.c
-        Contains functions to manipulate a doubly-linked list.
-
-*/
-
-
-/* private methods */
-
-static NodePtr reverse(NodePtr L);
-static void print(NodePtr node);
+static struct node* reverse(struct node* L);
+static void print(struct node* node);
 
 
 
-ListPtr createList()
+struct list* createList()
 {
-    ListPtr list = (ListPtr) malloc(sizeof(List));
-    list->size = 0;
-    list->head = NULL;
-    list->tail = NULL;
-    return list;
+	//java stuff 
+	//List<Foo> List = new List<Foo>();
+	struct list* list = (struct list*) malloc(sizeof(struct list));
+	list->size = 0;
+	list->head = NULL;
+	list->tail = NULL;
+	return list;
 }
 
-int getSize(ListPtr L)
+int getSize(struct list* L)
 {
-    return L->size;
+	//java version
+	//return this.size;
+	return L->size;
 }
 
-Boolean isEmpty(ListPtr L)
+Boolean isEmpty(struct list* L)
 {
-    if (L->size == 0)
-        return TRUE;
-    else
-        return FALSE;
+//	(L->size)? return TRUE: return 	FALSE;
+	if (L->size == 0)
+	return TRUE;
+	else
+	return FALSE;
 }
 
-void addAtFront(ListPtr list, NodePtr node)
+void addAtFront(struct list* list, struct node* node)
 {
-    if (list == NULL) return;
-    if (node == NULL) return;
-    list->size++;
-    node->next = list->head;
-    node->prev = NULL;
-    if (list->head == NULL) {
-        list->head = node;
-        list->tail = node;
-    } else {
-        list->head->prev = node;
-        list->head = node;
-    }
+	if (list == NULL) return;
+	if (node == NULL) return;
+	list->size++;
+	node->next = list->head;
+	node->prev = NULL;
+	if (list->head == NULL) {
+		list->head = node;
+		list->tail = node;
+	} else {
+		list->head->prev = node;
+		list->head = node;
+	}
 }
 
-void addAtRear(ListPtr list, NodePtr node)
+void addAtRear(struct list* list, struct node* node)
 {
+	if (list == NULL) return;
+	if (node == NULL) return;
+	list->size++;
+	node->next = list->head;
+	node->prev = NULL;
+	//empty list no tacos 
+	if (list->head == NULL) {
+		list->head = node;
+		list->tail = node;
+	} else {
+		list->head->next = node;
+		list->head = node;
+	}
 }
 
-NodePtr removeFront(ListPtr list)
+struct node* removeFront(struct list* list)
 {
-    return NULL;
+	if (list == NULL){
+	return NULL;
+//	}else if(list == 1){
+//		list->head = NULL;
+//		list->tail = NULL;
+//	}
+//	else{
+	//	list->head->next = node;
+	//}
+	}
+	list->size--;
+
+
+	return NULL;
 }
 
-NodePtr removeRear(ListPtr list)
+struct node* removeRear(struct list* list)
 {
-    return NULL;
+	if (list == NULL) return NULL;
+	list->size--;
+	return NULL;
 }
 
-NodePtr removeNode(ListPtr list, NodePtr node)
+struct node* removeNode(struct list* list, struct node* node)
 {
-    return NULL;
+	if (list == NULL) return NULL;
+	//if (node == NULL) return;
+	list->size++;
+	return NULL;
 }
 
-NodePtr search(ListPtr list, int key)
+struct node* search(struct list* list, int key)
 {
-    return NULL;
+	//optional method (for learning)
+	return NULL;
 }
 
-void reverseList(ListPtr L)
+void reverseList(struct list* L)
 {
-    L->tail = L->head;
-    L->head  = reverse (L->head);
+	//also optional method
+	L->tail = L->head;
+	L->head  = reverse (L->head);
 }
 
-static NodePtr reverse(NodePtr L)
-{
-    /* finish this function */
-    return NULL;
+static struct node* reverse(struct node* L)
+{	
+	//optional
+	return NULL;
 }
 
-void printList(ListPtr L)
+void printList(struct list* L)
 {
-    if (L) print(L->head);
+	if (L) print(L->head);
 }
 
-static void print(NodePtr node)
+static void print(struct node* node)
 {
-    int count = 0;
-    char *buf;
+	int count = 0;
+	char *buf;
 
-    while (node) {
-        buf = toString(node->data);
-        printf(" %s -->", buf);
-        free(buf);
-        node = node->next;
-        count++;
-        if ((count % 6) == 0)
-            printf("\n");
-    }
-    printf(" NULL \n");
-}
-
-
-void freeList(ListPtr L)
-{
+	while (node) {
+		buf = toString(node->data);
+		printf(" %s -->", buf);
+		node = node->next;
+		count++;
+		if ((count % 6) == 0)
+			printf("\n");
+	}
+	printf(" NULL \n");
 }
 
 
+void freeList(struct list* L)
+{
+	//required
+}

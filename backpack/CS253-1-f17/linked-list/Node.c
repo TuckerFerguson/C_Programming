@@ -2,16 +2,17 @@
 #include "Node.h"
 
 
-NodePtr createNode(JobPtr data)
+struct node* createNode(struct job* data)
 {
-    NodePtr newNode = (NodePtr) malloc (sizeof(Node));
+    struct node* newNode = (struct node*) malloc (sizeof(struct node*));
     newNode->next = NULL;
     newNode->prev = NULL;
     newNode->data = data;
     return newNode;
 }
 
-void freeNode (NodePtr node)
+void freeNode (struct node* node)
 {
+	//Ha!!! This is a no free zone :)
+	free(node);
 }
-
