@@ -72,13 +72,12 @@ struct node* removeFront(struct list* list)
 {
 	if (list == NULL){
 	return NULL;
-//	}else if(list == 1){
-//		list->head = NULL;
-//		list->tail = NULL;
-//	}
-//	else{
-	//	list->head->next = node;
-	//}
+	}else if(list->tail == list->head){
+		list->head = NULL;	
+		list->tail = NULL;
+	}
+	else{
+		list->head->next;
 	}
 	list->size--;
 
@@ -86,20 +85,44 @@ struct node* removeFront(struct list* list)
 	return NULL;
 }
 
-struct node* removeRear(struct list* list)
-{
-	if (list == NULL) return NULL;
+struct node* removeRear(struct list* list){
+	int i = 0;
+	if (list == NULL){
+		return NULL;
+	}else if(list->tail == list->head){
+	list->tail = NULL;
+	list->head = NULL;
+	}else{
+		for(i = 0; i <= list-> size - 1; i++){
+		  list->head->next;
+		}
+		list->tail;
+	}
 	list->size--;
 	return NULL;
 }
 
 struct node* removeNode(struct list* list, struct node* node)
 {
-	if (list == NULL) return NULL;
-	//if (node == NULL) return;
-	list->size++;
-	return NULL;
-}
+	if (node == list->head){
+		return removeFront(list);
+	}else if(node == list->tail){
+		return removeRear(list);
+	}else{
+		struct node* current;
+		current = list->head;
+
+		struct node* temp;
+		temp = current->next;
+		while(temp != node){
+			current = current->next;
+			temp = temp->next;
+		}
+		current = temp->next;
+		list->size--;
+		return temp;
+		}
+	}
 
 struct node* search(struct list* list, int key)
 {

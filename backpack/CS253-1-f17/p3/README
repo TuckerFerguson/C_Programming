@@ -1,25 +1,41 @@
 Tucker Ferguson
 CS253 Section 1
 
+Shell Part 2 & Shell Part 3
+
 Overview:
 This program is a basic shell. It is a foothold in an overall functionable shell script which we will be 
 developing later but it still contains working functions that one would typically expect. Such as the ability
-to change directories, exit and to accept other command line arguments. 
+to change directories, exit and to accept other command line arguments. In addition it now contains the a new 
+command that prints the history to konesole. 
 
 Compiling and Using:
 This code is ran simply by using the command ./smash in the directory containing all source files. Afterwards
 it will generate a very basic shell which takes in several different system calls. To exit one simply types
-"exit" as covered in the write up. 
+"exit" as covered in the write up. In order to print the history the user must enter "history" and a stack of
+all commands will be printed to konesole. 
 
 Testing:
+for part (1):
 I tested this code several times by simply watching output in the konesole and making sure it matched what was
 expected in the orginial write up. Next I took advantage of the test files and made sure my program passed 
 all provided resources. Finally I made use of valgrind to check for memory leaks.
+
+for part(2):
+To ensure that history was working properly I often inserted print statments into methods to ensure that they
+were being accessed, this was done in the history.c file. Next after ensuring that every method was being 
+accessed I began checking if the proper history was being printed to konesole. The only issue I ever really
+struggled with was making sure that the stack was printed properly with corresponding numbers. After a while
+I got the history command to print exactly what was listed in the example. 
+
 
 Sources Used:
 I took advantage of the resources included in the project write up, help from my class
 tutors, lab tutors, my instructor and zybooks. 
 
+for part 2 I also took advantage of the examples sent out to us via email from Shane. 
+
 Known Issues:
-N/A (hopefully)
+not every memory allocated was freed, although there was no leaks.
+
 
