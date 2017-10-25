@@ -1,0 +1,34 @@
+Peer: Devan Karsann
+
+1)
+In addition to prior functions of the smash.c shell we added a history command that prints to konsole the history 
+of commands entered by user. 
+
+2)
+The goal is to add more functionality to the smash.c shell. It also increases the scope of functions in which
+smash.c can use, by adding a new file history.c which requires a new header file named history.h.
+
+3) 
+Readability:
+Comments on every condition check in every file. Very easy to read, due to proper indentation. 
+
+Structure:
+Everything is indented properly and is very clean/easy to read.
+
+Testing:
+Used valgrind. Testing consisted of print statements and running smash. 
+
+Readability = 2
+
+Structure = 2
+
+Testing = 2
+
+
+
+Reflection on own score: My peer graded very fairly, maybe even too fairly. I plan on
+fixing indentations and making sure that all memory locations are freed properly. Aside from that
+I agree with the other scores and will be using his advice to better my program and future programs.
+
+
+							

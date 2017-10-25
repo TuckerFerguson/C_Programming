@@ -45,7 +45,7 @@ void clear_history(){
 void print_history(){
   int i = 0;
 	for(i=0;i<history.loc;i++){
-	  printf("%d",i+1);
+	  printf("[%d]",i+1);
 	  //white space to ensure proper output
 	  printf(" ");
 	  //prints out strings stored in struct 

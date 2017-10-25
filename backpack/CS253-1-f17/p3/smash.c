@@ -9,6 +9,7 @@
 #define MAXLINE 4096
 
 //smash_get_input(char *);
+void empty(char*);
 void oops(char*);
 void change_my_dir(char*);
 void printToken(char*);
@@ -23,10 +24,17 @@ int main(void)
 		fprintf(stderr,"$");
 
 	while (fgets(buff, MAXLINE, stdin) != NULL) {
+
 		int last = strlen(buff);
 		last--;
 		buff[last] = '\0';
+		if(strlen(buff) == 0){
+			fprintf(stderr,"$");
+			continue;
+		}
 		strncpy(buffCopy, buff, MAXLINE);
+		
+
 		char *token = strtok(buffCopy, " ");
 
 		add_history(buff);
@@ -72,6 +80,7 @@ void change_my_dir(char* token){
 	}
 
 }
+
 void oops(char *token){
 		printf("error: ");
 		printf(token);
