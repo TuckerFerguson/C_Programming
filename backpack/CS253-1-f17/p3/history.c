@@ -31,14 +31,21 @@ void add_history( char* val){
 }
 
 void clear_history(){
-  struct cmd ** temporary = history.structArray;
-  while(*temporary){
-	struct cmd *clean = *temporary;
-	free(clean);
-	free(*temporary);
-	temporary++;
+	int i;
+	for(i=0;i<history.loc;i++){
+	 
+	 free(history.structArray[i]->cmd);
+	
+
+	//struct cmd ** temporary = history.structArray;
+  //while(*temporary){
+	//struct cmd *clean = *temporary;
+	//free(clean);
+	//free(*temporary);
+	//temporary++;
   }
-   free(history.structArray);
+	free(history.structArray);	
+  
 }
 
 

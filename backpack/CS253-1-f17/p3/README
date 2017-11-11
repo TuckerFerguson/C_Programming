@@ -7,7 +7,8 @@ Overview:
 This program is a basic shell. It is a foothold in an overall functionable shell script which we will be 
 developing later but it still contains working functions that one would typically expect. Such as the ability
 to change directories, exit and to accept other command line arguments. In addition it now contains the a new 
-command that prints the history to konesole. 
+command that prints the history to konesole. Further edition it allows use of new commands and implements a 
+new environment variable chaos monkey. 
 
 Compiling and Using:
 This code is ran simply by using the command ./smash in the directory containing all source files. Afterwards
@@ -28,12 +29,21 @@ accessed I began checking if the proper history was being printed to konesole. T
 struggled with was making sure that the stack was printed properly with corresponding numbers. After a while
 I got the history command to print exactly what was listed in the example. 
 
+for part(3):
+We further developed our shell to hold proccesses and take in more commands such as "pwd" or "ls" 
+and ensure the path was proper so that these functions would actually work. We were also asked to implement
+an enviroment variable called chaos monkey that randomly terminated one of these commands 25% of the time. 
+Most of this was very new to me but thankfully Shane provided example code on how to chop line exect and
+strncpy which helped a lot. The rest was a lot of trial by error, however I believe I got everything working.
 
 Sources Used:
 I took advantage of the resources included in the project write up, help from my class
 tutors, lab tutors, my instructor and zybooks. 
 
 for part 2 I also took advantage of the examples sent out to us via email from Shane. 
+
+for part 3 Ontop of all other resources listed I used code provided to us by Shane for two methods (chopline, strncpy)
+as well as how to properly declare an environment variable. 
 
 Known Issues:
 not every memory allocated was freed, although there was no leaks.
