@@ -3,8 +3,8 @@
 CC=gcc
 CFLAGS=-Wall -g -I../include 
 
-grader: test-ring-buffer.o
-	$(CC) $(CFLAGS) -o $@ $^  -L../lib/ -lring
+grader: test-threads.c
+	$(CC) $(CFLAGS) -o $@ $^  -L../lib/ -lring -lpthread
 
 clean:
 	/bin/rm -f *.o grader

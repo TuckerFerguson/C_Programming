@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-Wall -I. -g -fPIC -shared
+CFLAGS=-Wall -I. -g -fPIC -shared -pthread
 LFLAGS=-L$(LIB) -lmylib
 
 all: ring-buffer 
