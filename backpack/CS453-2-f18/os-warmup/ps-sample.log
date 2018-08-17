@@ -1,0 +1,265 @@
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0 193880  6252 ?        Ss   Aug29   0:04 /usr/lib/systemd/systemd --switched-root --system --deserialize 23
+root         2  0.0  0.0      0     0 ?        S    Aug29   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Aug29   0:00 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    Aug29   3:21 [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    Aug29   0:00 [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    Aug29   1:35 [rcuos/0]
+root        10  0.0  0.0      0     0 ?        S    Aug29   0:00 [rcuob/0]
+root        11  0.0  0.0      0     0 ?        S    Aug29   0:00 [migration/0]
+root        12  0.0  0.0      0     0 ?        S<   Aug29   0:00 [lru-add-drain]
+root        13  0.0  0.0      0     0 ?        S    Aug29   0:00 [watchdog/0]
+root        14  0.0  0.0      0     0 ?        S    Aug29   0:00 [cpuhp/0]
+root        15  0.0  0.0      0     0 ?        S    Aug29   0:00 [cpuhp/1]
+root        16  0.0  0.0      0     0 ?        S    Aug29   0:00 [watchdog/1]
+root        17  0.0  0.0      0     0 ?        S    Aug29   0:00 [migration/1]
+root        18  0.0  0.0      0     0 ?        S    Aug29   0:00 [ksoftirqd/1]
+root        20  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kworker/1:0H]
+root        21  0.0  0.0      0     0 ?        S    Aug29   0:34 [rcuos/1]
+root        22  0.0  0.0      0     0 ?        S    Aug29   0:00 [rcuob/1]
+root        23  0.0  0.0      0     0 ?        S    Aug29   0:00 [cpuhp/2]
+root        24  0.0  0.0      0     0 ?        S    Aug29   0:00 [watchdog/2]
+root        25  0.0  0.0      0     0 ?        S    Aug29   0:00 [migration/2]
+root        26  0.0  0.0      0     0 ?        S    Aug29   0:03 [ksoftirqd/2]
+root        28  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kworker/2:0H]
+root        29  0.0  0.0      0     0 ?        S    Aug29   1:46 [rcuos/2]
+root        30  0.0  0.0      0     0 ?        S    Aug29   0:00 [rcuob/2]
+root        31  0.0  0.0      0     0 ?        S    Aug29   0:00 [cpuhp/3]
+root        32  0.0  0.0      0     0 ?        S    Aug29   0:00 [watchdog/3]
+root        33  0.0  0.0      0     0 ?        S    Aug29   0:00 [migration/3]
+root        34  0.0  0.0      0     0 ?        S    Aug29   0:00 [ksoftirqd/3]
+root        36  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kworker/3:0H]
+root        37  0.0  0.0      0     0 ?        S    Aug29   0:41 [rcuos/3]
+root        38  0.0  0.0      0     0 ?        S    Aug29   0:00 [rcuob/3]
+root        39  0.0  0.0      0     0 ?        S    Aug29   0:00 [kdevtmpfs]
+root        40  0.0  0.0      0     0 ?        S<   Aug29   0:00 [netns]
+root        41  0.0  0.0      0     0 ?        S    Aug29   0:00 [oom_reaper]
+root        42  0.0  0.0      0     0 ?        S<   Aug29   0:00 [writeback]
+root        43  0.0  0.0      0     0 ?        S    Aug29   0:00 [kcompactd0]
+root        44  0.0  0.0      0     0 ?        SN   Aug29   0:00 [ksmd]
+root        45  0.0  0.0      0     0 ?        SN   Aug29   0:00 [khugepaged]
+root        46  0.0  0.0      0     0 ?        S<   Aug29   0:00 [crypto]
+root        47  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kintegrityd]
+root        48  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root        49  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kblockd]
+root        50  0.0  0.0      0     0 ?        S<   Aug29   0:00 [ata_sff]
+root        51  0.0  0.0      0     0 ?        S<   Aug29   0:00 [md]
+root        52  0.0  0.0      0     0 ?        S<   Aug29   0:00 [devfreq_wq]
+root        53  0.0  0.0      0     0 ?        S<   Aug29   0:00 [watchdogd]
+root        56  0.0  0.0      0     0 ?        S    Aug29   0:15 [kswapd0]
+root        57  0.0  0.0      0     0 ?        S<   Aug29   0:00 [vmstat]
+root       103  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kthrotld]
+root       107  0.0  0.0      0     0 ?        S<   Aug29   0:00 [acpi_thermal_pm]
+root       108  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_0]
+root       109  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_0]
+root       110  0.0  0.0      0     0 ?        S    Aug29   0:13 [scsi_eh_1]
+root       111  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_1]
+root       112  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_2]
+root       113  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_2]
+root       114  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_3]
+root       115  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_3]
+root       116  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_4]
+root       117  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_4]
+root       118  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_5]
+root       119  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_5]
+root       125  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_6]
+root       126  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_6]
+root       127  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_7]
+root       128  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_7]
+root       133  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kpsmoused]
+root       135  0.0  0.0      0     0 ?        S<   Aug29   0:00 [dm_bufio_cache]
+root       136  0.0  0.0      0     0 ?        S<   Aug29   0:00 [ipv6_addrconf]
+root       169  0.0  0.0      0     0 ?        S<   Aug29   0:00 [deferwq]
+root       171  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       173  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       174  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       175  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       177  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       215  0.0  0.0      0     0 ?        S    Aug29   0:00 [kauditd]
+root       370  0.0  0.0      0     0 ?        S    Aug29   0:00 [scsi_eh_8]
+root       371  0.0  0.0      0     0 ?        S<   Aug29   0:00 [scsi_tmf_8]
+root       372  0.0  0.0      0     0 ?        S    Aug29   0:21 [usb-storage]
+root       373  0.0  0.0      0     0 ?        S<   Aug29   0:00 [firewire]
+root       374  0.0  0.0      0     0 ?        S<   Aug29   0:00 [firewire_ohci]
+root       376  0.0  0.0      0     0 ?        S<   Aug29   0:11 [kworker/0:1H]
+root       401  0.0  0.0      0     0 ?        S    Aug29   0:06 [jbd2/sda1-8]
+root       402  0.0  0.0      0     0 ?        S<   Aug29   0:00 [ext4-rsv-conver]
+root       491  0.0  0.0  56076 21000 ?        Ss   Aug29   0:02 /usr/lib/systemd/systemd-journald
+root       511  0.0  0.0      0     0 ?        S<   Aug29   0:10 [kworker/1:1H]
+root       517  0.0  0.0      0     0 ?        S<   Aug29   0:00 [rpciod]
+root       518  0.0  0.0      0     0 ?        S<   Aug29   0:00 [xprtiod]
+root       528  0.0  0.0  44496  4028 ?        Ss   Aug29   0:00 /usr/lib/systemd/systemd-udevd
+root       564  0.0  0.0      0     0 ?        S    Aug29   0:00 [irq/30-mei_me]
+root       575  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       615  0.0  0.0      0     0 ?        S<   Aug29   0:00 [kvm-irqfd-clean]
+root       627  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       637  0.0  0.0      0     0 ?        S<   Aug29   0:00 [bioset]
+root       638  0.0  0.0      0     0 ?        S    Aug29   7:14 [md127_raid1]
+root       676  0.0  0.0      0     0 ?        S    Aug29   0:12 [jbd2/sdb1-8]
+root       677  0.0  0.0      0     0 ?        S<   Aug29   0:00 [ext4-rsv-conver]
+root       688  0.0  0.0      0     0 ?        S    Aug29   0:00 [jbd2/md127-8]
+root       689  0.0  0.0      0     0 ?        S<   Aug29   0:00 [ext4-rsv-conver]
+root       708  0.0  0.0  55552  2164 ?        S<sl Aug29   0:00 /sbin/auditd
+root       732  0.0  0.0  16984  2796 ?        SNs  Aug29   0:00 /usr/sbin/alsactl -s -n 19 -c -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile=/lib/alsa/init/00main rdaemon
+rtkit      733  0.0  0.0 188876  3536 ?        SNsl Aug29   0:03 /usr/libexec/rtkit-daemon
+root       735  0.0  0.0 435644  9484 ?        Ssl  Aug29   4:49 /usr/libexec/udisks2/udisksd --no-debug
+root       736  0.0  0.0  19560  2700 ?        Ss   Aug29   0:21 /usr/sbin/irqbalance --foreground
+root       738  0.0  0.0   6536  1828 ?        Ss   Aug29   0:00 /usr/sbin/mcelog --ignorenodev --daemon --foreground
+avahi      739  0.0  0.0  52352  4112 ?        Ss   Aug29   0:00 avahi-daemon: running [kohinoor.local]
+root       740  0.0  0.0 705380 14216 ?        Ssl  Aug29   0:00 /usr/sbin/rsyslogd -n
+dbus       743  0.0  0.0  51728  5540 ?        Ss   Aug29   0:11 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+avahi      746  0.0  0.0  52232   368 ?        S    Aug29   0:00 avahi-daemon: chroot helper
+root       756  0.0  0.0 205724  3292 ?        Ssl  Aug29   0:00 /usr/sbin/gssproxy -D
+root       778  0.0  0.0 548208 15324 ?        Ssl  Aug29   0:03 /usr/sbin/NetworkManager --no-daemon
+root       779  0.0  0.0   7084  1648 ?        Ss   Aug29   0:00 /sbin/mdadm --monitor --scan -f --pid-file=/var/run/mdadm/mdadm.pid
+root       780  0.0  0.0  24436  3144 ?        Ss   Aug29   0:00 /usr/lib/systemd/systemd-logind
+root       781  0.0  0.0  25280  4428 ?        Ss   Aug29   0:00 /usr/sbin/smartd -n -q never
+root       782  0.0  0.0 339240  9124 ?        Ssl  Aug29   0:00 /usr/sbin/ModemManager
+root       783  0.0  0.0 388612  7104 ?        Ssl  Aug29   0:05 /usr/libexec/accounts-daemon
+chrony     794  0.0  0.0 114092  3192 ?        S    Aug29   0:00 /usr/sbin/chronyd
+polkitd    797  0.0  0.0 528928 15148 ?        Ssl  Aug29   0:01 /usr/lib/polkit-1/polkitd --no-debug
+root       798  0.0  0.0 438020  8656 ?        Ssl  Aug29   0:00 /usr/sbin/abrtd -d -s
+root       843  0.0  0.0 212416  9152 ?        Ss   Aug29   0:00 /usr/sbin/cupsd -l
+root       856  0.0  0.0 696144 13368 ?        Ss   Aug29   0:00 /usr/bin/abrt-dump-journal-oops -fxtD
+root       857  0.0  0.0 454124  9232 ?        Ss   Aug29   0:00 /usr/bin/abrt-dump-journal-xorg -fxtD
+root       866  0.0  0.0  83112  3116 ?        Ss   Aug29   0:00 /usr/sbin/sshd
+colord     947  0.0  0.0 407860  9856 ?        Ssl  Aug29   0:00 /usr/libexec/colord
+root       980  0.0  0.0 173648   492 ?        Ssl  Aug29   0:00 /usr/lib/vmware/bin/vmware-vmblock-fuse -o subtype=vmware-vmblock,default_permissions,allow_other /var/run/vmblock-fuse
+root      1019  0.0  0.0   6956   192 ?        Ss   Aug29   0:00 /usr/bin/vmnet-bridge -s 6 -d /var/run/vmnet-bridge-0.pid -n 0
+root      1027  0.0  0.0   6928   184 ?        Ss   Aug29   0:00 /usr/bin/vmnet-netifup -s 6 -d /var/run/vmnet-netifup-vmnet1.pid /dev/vmnet1 vmnet1
+root      1037  0.0  0.0  19192  5632 ?        Ss   Aug29   0:00 /usr/bin/vmnet-dhcpd -s 6 -cf /etc/vmware/vmnet1/dhcpd/dhcpd.conf -lf /etc/vmware/vmnet1/dhcpd/dhcpd.leases -pf /var/run/vmnet-dhcpd-vmnet1.pid vmnet1
+root      1040  0.0  0.0 855648  5688 ?        S    Aug29   1:02 /usr/bin/vmnet-natd -s 6 -m /etc/vmware/vmnet8/nat.mac -c /etc/vmware/vmnet8/nat/nat.conf
+root      1043  0.0  0.0   6928   188 ?        Ss   Aug29   0:00 /usr/bin/vmnet-netifup -s 6 -d /var/run/vmnet-netifup-vmnet8.pid /dev/vmnet8 vmnet8
+root      1050  0.0  0.0  19192  5636 ?        Ss   Aug29   0:02 /usr/bin/vmnet-dhcpd -s 6 -cf /etc/vmware/vmnet8/dhcpd/dhcpd.conf -lf /etc/vmware/vmnet8/dhcpd/dhcpd.leases -pf /var/run/vmnet-dhcpd-vmnet8.pid vmnet8
+root      1083  0.0  0.0  14636   452 ?        Ss   Aug29   0:12 /usr/sbin/vmware-authdlauncher
+root      1090  0.0  0.0  22364  3188 ?        Ss   Aug29   0:13 /usr/bin/vmware-usbarbitrator
+root      1287  0.0  0.2 1603600 82600 ?       Sl   Aug29   0:35 /usr/lib/vmware/bin/vmware-hostd -a /etc/vmware/hostd/config.xml
+root      1396  0.0  0.0      0     0 ?        S<   Aug29   0:00 [nfsiod]
+root      1408  0.0  0.0      0     0 ?        S    Aug29   0:00 [nfsv4.0-svc]
+root      1419  0.0  0.0  25940  2100 ?        Ss   Aug29   0:00 /usr/sbin/atd -f
+root      1421  0.0  0.0 130716  3120 ?        Ss   Aug29   0:00 /usr/sbin/crond -n
+root      1427  0.0  0.0 320612 14860 ?        Ssl  Aug29   0:00 /usr/bin/sddm
+root      1431  0.3  0.2 241348 90988 tty1     Ss+  Aug29  39:27 /usr/libexec/Xorg -nolisten tcp -auth /var/run/sddm/{dc11e95a-a86a-40f7-bb4b-e101fe87611c} -background none -noreset -displayfd 17 vt1
+root      1433  0.2  0.0      0     0 ?        S    Aug29  21:31 [irq/32-nvidia]
+root      1434  0.0  0.0      0     0 ?        S    Aug29   0:00 [nvidia]
+amit      1445  0.0  0.2 942644 95268 ?        Sl   Aug31   0:01 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=BBC7032EC5BC3F886F96270526F89242 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=BBC7032EC5BC3F886F96270526F89242 --renderer-client-id=96 --s
+root      1455  0.0  0.0 415768  8368 ?        Ssl  Aug29   0:11 /usr/libexec/upowerd
+root      1499  0.0  0.0 298916 15116 ?        SL   Aug29   0:00 /usr/libexec/sddm-helper --socket /tmp/sddm-auth10d482bd-02bb-4257-8ded-a355e509ab8c --id 1 --start /usr/bin/startkde --user amit
+amit      1500  0.0  0.0  47620  5268 ?        Ss   Aug29   0:00 /usr/lib/systemd/systemd --user
+amit      1501  0.0  0.0 242376  2156 ?        S    Aug29   0:00 (sd-pam)
+amit      1511  0.0  0.1 641460 36364 ?        Sl   Aug29   0:01 /usr/bin/kwalletd5 --pam-login 14 17
+amit      1514  0.0  0.0 117672  3100 ?        S    Aug29   0:00 /bin/sh /usr/bin/startkde
+amit      1540  0.0  0.0  51164  5236 ?        Ss   Aug29   0:01 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+amit      1545  0.0  0.0  51328   580 ?        Ss   Aug29   0:01 /usr/bin/ssh-agent /bin/sh -c exec -l /bin/bash -c "/usr/bin/startkde"
+amit      1627  0.0  0.0  13264   172 ?        S    Aug29   0:00 /usr/libexec/kf5/start_kdeinit --kded +kcminit_startup
+amit      1628  0.0  0.0 267348  8304 ?        Ss   Aug29   0:00 kdeinit5: Running...
+amit      1629  0.0  0.1 635556 35912 ?        Sl   Aug29   0:01 /usr/libexec/kf5/klauncher --fd=9
+amit      1633  0.0  0.2 1606784 68176 ?       Sl   Aug29   0:40 kded5 [kdeinit5]
+amit      1647  0.0  0.0 650824 31352 ?        Sl   Aug29   0:01 /usr/bin/kaccess
+amit      1650  0.0  0.0  89712  7340 ?        S    Aug29   0:00 kwrapper5 /usr/bin/ksmserver
+amit      1651  0.0  0.1 756144 44092 ?        Sl   Aug29   0:03 /usr/bin/ksmserver
+amit      1658  0.0  0.0 405144 13360 ?        Sl   Aug29   0:00 /usr/libexec/mission-control-5
+amit      1683  0.0  0.1 637292 34984 ?        Sl   Aug29   0:01 /usr/bin/kglobalaccel5
+amit      1706  0.0  0.0 466712 18112 ?        Sl   Aug29   0:01 /usr/libexec/kf5/kscreen_backend_launcher
+amit      1707  0.4  0.3 3373344 110064 ?      Sl   Aug29  41:53 kwin_x11 -session 1024027d2931e6000144054528300000248640000_1481904930_49999
+amit      1713  0.0 13.5 269987088 4449316 ?   SNl  Aug29   7:48 /usr/bin/baloo_file
+amit      1715  0.0  0.1 721340 42084 ?        Sl   Aug29   0:29 /usr/libexec/kdeconnectd
+amit      1716  0.0  0.6 270178128 208724 ?    Sl   Aug29   0:10 /usr/bin/krunner
+amit      1718  0.0  1.1 5199156 371200 ?      Sl   Aug29   1:45 /usr/bin/plasmashell --shut-up
+amit      1721  0.0  0.1 797088 37476 ?        Sl   Aug29   0:01 /usr/libexec/kf5/polkit-kde-authentication-agent-1
+amit      1722  0.0  0.1 638352 33700 ?        Sl   Aug29   0:01 /usr/bin/xembedsniproxy
+amit      1745  0.0  0.0 638088 12988 ?        S<l  Aug29   0:29 /usr/bin/pulseaudio --start --log-target=syslog
+amit      1760  0.0  0.2 765280 73060 ?        Sl   Aug29   1:55 konsole [kdeinit5] -session 1024027d2931e6000144192624500000016260010_1481904930_24484 -name konsole
+amit      1780  0.0  0.1 1026392 38556 ?       Sl   Aug29   0:19 /usr/bin/kactivitymanagerd start-daemon
+amit      1783  0.0  0.1 817292 41824 ?        Sl   Aug29   0:07 /usr/libexec/org_kde_powerdevil -session 1024027d2931e6000148190490600000040030009_1481904930_23109
+amit      1792  0.0  0.2 1100024 88412 ?       Sl   Aug29   0:03 /usr/bin/korgac -session 1024027d2931e6000148190490700000040030010_1481904930_23110
+amit      1845  0.0  0.0 124036  7720 pts/0    Ss   Aug29   0:00 /bin/bash
+amit      1856  0.0  0.0 124768  8584 pts/1    Ss   Aug29   0:02 /bin/bash
+amit      1872  0.0  0.0 124036  7808 pts/2    Ss   Aug29   0:00 /bin/bash
+amit      1975  0.0  0.1 637320 35248 ?        Sl   Aug29   0:05 /usr/bin/akonadi_control
+amit      1983  0.0  0.0 2672152 32480 ?       Sl   Aug29   0:07 akonadiserver
+amit      1997  0.0  0.1 2555104 62788 ?       Sl   Aug29   3:24 /usr/libexec/mysqld --defaults-file=/home/amit/.local/share/akonadi/mysql.conf --datadir=/home/amit/.local/share/akonadi/db_data/ --socket=/tmp/akonadi-amit.nLZJZR/mysql.socket
+amit      2035  0.0  0.1 732432 39288 ?        Sl   Aug29   0:01 /usr/bin/akonadi_akonotes_resource --identifier akonadi_akonotes_resource_0
+amit      2036  0.0  0.1 732368 39380 ?        Sl   Aug29   0:01 /usr/bin/akonadi_akonotes_resource --identifier akonadi_akonotes_resource_1
+amit      2037  0.0  0.2 1187288 96976 ?       Sl   Aug29   0:02 /usr/bin/akonadi_archivemail_agent --identifier akonadi_archivemail_agent
+amit      2038  0.0  0.1 745364 41368 ?        Sl   Aug29   0:01 /usr/bin/akonadi_birthdays_resource --identifier akonadi_birthdays_resource
+amit      2039  0.0  0.1 722896 38512 ?        Sl   Aug29   0:01 /usr/bin/akonadi_contacts_resource --identifier akonadi_contacts_resource_0
+amit      2040  0.0  0.1 823844 42312 ?        Sl   Aug29   0:31 /usr/bin/akonadi_followupreminder_agent --identifier akonadi_followupreminder_agent
+amit      2041  0.0  0.1 827716 42728 ?        Sl   Aug29   0:31 /usr/bin/akonadi_ical_resource --identifier akonadi_ical_resource_0
+amit      2042  0.0  0.1 761528 43656 ?        SNl  Aug29   0:01 /usr/bin/akonadi_indexing_agent --identifier akonadi_indexing_agent
+amit      2044  0.0  0.1 732328 39684 ?        Sl   Aug29   0:01 /usr/bin/akonadi_maildir_resource --identifier akonadi_maildir_resource_0
+amit      2045  0.0  0.1 809340 40496 ?        Sl   Aug29   0:31 /usr/bin/akonadi_maildispatcher_agent --identifier akonadi_maildispatcher_agent
+amit      2048  0.0  0.3 1234060 99144 ?       Sl   Aug29   0:02 /usr/bin/akonadi_mailfilter_agent --identifier akonadi_mailfilter_agent
+amit      2052  0.0  0.1 725380 38632 ?        Sl   Aug29   0:01 /usr/bin/akonadi_migration_agent --identifier akonadi_migration_agent
+amit      2053  0.0  0.2 984352 80420 ?        Sl   Aug29   0:01 /usr/bin/akonadi_newmailnotifier_agent --identifier akonadi_newmailnotifier_agent
+amit      2055  0.0  0.2 1135140 81752 ?       Sl   Aug29   0:31 /usr/bin/akonadi_notes_agent --identifier akonadi_notes_agent
+amit      2059  0.0  0.2 1181664 96152 ?       Sl   Aug29   0:29 /usr/bin/akonadi_sendlater_agent --identifier akonadi_sendlater_agent
+amit      2135  0.0  0.0 593636 28264 ?        Sl   Aug29   0:00 /usr/bin/abrt-applet
+amit      2154  0.0  0.7 3173612 252268 ?      Ssl  Aug29   4:30 /home/amit/.dropbox-dist/dropbox-lnx.x86_64-33.4.23/dropbox
+amit      2173  0.0  0.0 337696  5376 ?        Ssl  Aug29   0:00 /usr/libexec/at-spi-bus-launcher
+amit      2180  0.0  0.0  50164  3772 ?        S    Aug29   0:00 /bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+amit      2182  0.0  0.0 218572  5612 ?        Sl   Aug29   0:03 /usr/libexec/at-spi2-registryd --use-gnome-session
+amit      2195  0.0  0.1 636892 35888 ?        Sl   Aug29   0:02 /usr/bin/kuiserver5
+root      2246  0.0  0.5 844092 189812 ?       Ssl  Aug29   0:18 /usr/libexec/packagekitd
+amit      2577  0.0  0.0 383620  5832 ?        Ssl  Aug29   0:00 /usr/libexec/gvfsd
+amit      2740  0.1  0.2 872212 96724 ?        Sl   Aug29  10:52 /usr/lib/vmware/bin/vmplayer
+amit      2776  0.0  0.0 173672  5656 ?        S    Aug29   0:00 /usr/libexec/gconfd-2
+amit      5686 11.1 20.2 9047116 6652304 ?     Ssl  Aug29 1119:22 /usr/lib/vmware/bin/vmware-vmx -ssnapshot.numRollingTiers=0 -s vmx.stdio.keep=TRUE -# product=4;name=VMware Player;version=12.5.7;buildnumber=5813279;licensename=VMware Player;licenseversion=12.0; -@ duplex=3;msgs=ui /opt/vmware/Windows 7 x64/Windows 7 x64.vmx
+amit      5734  0.0  0.0      0     0 ?        Z    Aug29   0:12 [thnuclnt] <defunct>
+amit      5963  0.0  0.0  14220  1016 pts/0    S    Aug29   0:00 git-credential-cache--daemon /home/amit/.git-credential-cache/socket
+amit      6064  0.0  0.0 321544 16212 ?        Ss   Aug29   0:00 kdeinit4: kdeinit4 Runnin e
+amit      6066  0.0  0.0 348380 20052 ?        S    Aug29   0:00 kdeinit4: klauncher [kdei e
+amit      6068  0.0  0.0 446712 31316 ?        S    Aug29   0:00 kdeinit4: kded4 [kdeinit]
+amit      6070  0.0  0.0  14352  2820 ?        S    Aug29   0:00 /usr/libexec/gam_server
+amit      6639  0.5  1.2 2211568 427236 ?      Sl   Aug29  52:57 /opt/google/chrome/chrome
+amit      6648  0.0  0.0 112480   720 ?        S    Aug29   0:00 cat
+amit      6649  0.0  0.0 112480   772 ?        S    Aug29   0:00 cat
+amit      6652  0.0  0.1 503856 50200 ?        S    Aug29   0:00 /opt/google/chrome/chrome --type=zygote
+amit      6653  0.0  0.0  83624 11360 ?        S    Aug29   0:00 /opt/google/chrome/nacl_helper
+amit      6656  0.0  0.0 503856 12180 ?        S    Aug29   0:00 /opt/google/chrome/chrome --type=zygote
+root      6664  0.0  0.0  45548  4884 ?        Ss   Aug29   0:00 /usr/libexec/bluetooth/bluetoothd
+amit      6741  0.1  0.9 1145052 312272 ?      Sl   Aug29  14:53 /opt/google/chrome/chrome --type=gpu-process --field-trial-handle=1 --supports-dual-gpus=false --gpu-driver-bug-workarounds=7,19,23,42,50,54,63,74,85,87,93 --disable-gl-extensions=GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent --gpu-vendor-id=0x10de --gpu-device-id=0x11c6 --gpu-driver-vendor=NVIDIA --gpu-driver-version=375.39 --gpu-driver-date --service-request-channel-token=ED37A48192344DF8515FD2DD20B4CEC3
+amit      6752  0.0  0.0 508092 22696 ?        S    Aug29   0:00 /opt/google/chrome/chrome --type=gpu-broker
+amit      6813  0.0  1.2 1480116 402600 ?      Sl   Aug29   9:10 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=DB47C15189DA0240B174EC54533575ED --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=DB47C15189DA0240B174EC54533575ED --rende
+amit      6832  0.0  0.4 992728 132484 ?       Sl   Aug29   0:58 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=B88F75A9321EE4F61B71B4A7646185FE --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=B88F75A9321EE4F61B71B4A7646185FE --rende
+amit      6874  0.8  3.3 2244172 1110260 ?     Sl   Aug29  87:44 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=990FF95C0ABEBCDDF4D5273A989316C9 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=990FF95C0ABEBCDDF4D5273A989316C9 --renderer-client-id=8 --sh
+amit      7043  0.0  0.7 1201236 248484 ?      Sl   Aug29   6:35 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=0C2CA307801A60B0BE2E3447CAD601B6 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=0C2CA307801A60B0BE2E3447CAD601B6 --renderer-client-id=11 --s
+root     10004  0.0  0.0      0     0 ?        S<   Aug30   0:15 [kworker/3:2H]
+amit     10490  0.0  0.4 1018300 138576 ?      Sl   Sep01   0:38 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=AA272061CFEF9E6F01A79AC424F95868 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=AA272061CFEF9E6F01A79AC424F95868 --renderer-client-id=117 --
+amit     11173  0.0  0.4 1082296 150460 ?      Sl   Sep01   1:45 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=E2EAB1F25AB2EA1BFA22CE3CD8AA4943 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=E2EAB1F25AB2EA1BFA22CE3CD8AA4943 --renderer-client-id=118 --
+amit     13788  0.0  0.7 1162920 249096 ?      Sl   Aug30   1:27 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=169F4DF6C2606204C30FE7304C5A7529 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=169F4DF6C2606204C30FE7304C5A7529 --renderer-client-id=18 --s
+amit     13960  0.0  0.4 1046104 135712 ?      Sl   Aug30   0:20 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=39E1FC8FE9F1AB5F9242945CA41BCCE5 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=39E1FC8FE9F1AB5F9242945CA41BCCE5 --renderer-client-id=21 --s
+amit     15489  0.1  0.5 1959464 181068 ?      Sl   Aug30  11:07 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=EC7F0AB1204A5272AD4A0F012AB8055A --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=EC7F0AB1204A5272AD4A0F012AB8055A --rende
+amit     15560  0.0  1.1 1595876 365632 ?      Sl   Aug30   3:05 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=645AA3FC6051E2DF24A370BFCF79E9BD --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=645AA3FC6051E2DF24A370BFCF79E9BD --rende
+amit     15707  0.0  0.1 553868 40596 ?        Sl   Sep01   0:00 /usr/bin/knotify4
+amit     17210  0.0  0.0 302928  6160 ?        Ssl  Aug30   0:00 /usr/libexec/gvfsd-metadata
+amit     17224  0.0  0.0 312388  7500 ?        Sl   Aug30   0:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+lp       17248  0.0  0.0  92248  6016 ?        S    Aug30   0:00 /usr/lib/cups/notifier/dbus dbus://
+root     18995  0.0  0.0      0     0 ?        S<   00:15   0:02 [kworker/2:1H]
+amit     20195  0.0  0.4 1059380 140240 ?      Sl   Aug30   0:16 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=77522B685557DF3EF9B61404354DF257 --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=77522B685557DF3EF9B61404354DF257 --renderer-client-id=55 --s
+amit     21690  0.1  1.5 1668856 515540 ?      Sl   Sep01   6:25 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=114EC03421FA0760749F3707B0024FD4 --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=114EC03421FA0760749F3707B0024FD4 --rende
+amit     21901  0.0  1.0 1550512 352376 ?      Sl   Sep01   2:19 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=04693FC2C00A36FEF4C8A5AB65C376B5 --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=04693FC2C00A36FEF4C8A5AB65C376B5 --rende
+amit     22166  0.0  0.0  80924  7096 pts/1    S+   09:51   0:00 ssh -Y -t onyx
+amit     23112  0.1  0.5 1124136 184560 ?      Sl   11:40   0:21 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=77F711194222F9AE32A3F2173C45DF7C --lang=en-US --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=77F711194222F9AE32A3F2173C45DF7C --renderer-client-id=218 --
+root     23467  0.0  0.0      0     0 ?        S    11:59   0:00 [kworker/3:0]
+root     23625  0.0  0.0      0     0 ?        S    12:16   0:00 [kworker/0:2]
+root     24036  0.0  0.0      0     0 ?        S    13:17   0:00 [kworker/0:0]
+root     24128  0.0  0.0      0     0 ?        S    13:38   0:00 [kworker/u16:2]
+root     24266  0.0  0.0      0     0 ?        S    13:49   0:00 [kworker/2:0]
+amit     24361  0.0  0.5 1116860 195796 ?      Sl   13:57   0:04 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=C5955AA329C3A3F26C7C2AC67AA838A7 --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=C5955AA329C3A3F26C7C2AC67AA838A7 --rende
+amit     24757  0.0  1.1 1588508 363268 ?      Sl   Sep01   2:22 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=B471147DDAAD3C8DB774385B50ECC0F1 --lang=en-US --extension-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=B471147DDAAD3C8DB774385B50ECC0F1 --rende
+root     24871  0.0  0.0      0     0 ?        S    14:11   0:00 [kworker/1:1]
+root     25078  0.0  0.0      0     0 ?        S    14:18   0:00 [kworker/2:1]
+root     25157  0.0  0.0      0     0 ?        S    14:28   0:00 [kworker/1:0]
+root     25303  0.0  0.0      0     0 ?        S    14:48   0:00 [kworker/u16:0]
+amit     25322  0.4  0.3 997224 127792 ?       Sl   14:49   0:05 /opt/google/chrome/chrome --type=renderer --field-trial-handle=1 --primordial-pipe-token=0D8FF00DFB5A0747C9C14EB26CE64E22 --lang=en-US --instant-process --enable-offline-auto-reload --enable-offline-auto-reload-visible-only --blink-settings=disallowFetchForDocWrittenScriptsInMainFrame=false,disallowFetchForDocWrittenScriptsInMainFrameOnSlowConnections=true --enable-pinch --num-raster-threads=2 --enable-main-frame-before-activation --content-image-texture-target=0,0,3553;0,1,3553;0,2,3553;0,3,3553;0,4,3553;0,5,3553;0,6,3553;0,7,3553;0,8,3553;0,9,3553;0,10,3553;0,11,3553;0,12,3553;0,13,3553;0,14,3553;0,15,3553;1,0,3553;1,1,3553;1,2,3553;1,3,3553;1,4,3553;1,5,3553;1,6,3553;1,7,3553;1,8,3553;1,9,3553;1,10,3553;1,11,3553;1,12,3553;1,13,3553;1,14,3553;1,15,3553;2,0,3553;2,1,3553;2,2,3553;2,3,3553;2,4,3553;2,5,3553;2,6,3553;2,7,3553;2,8,3553;2,9,3553;2,10,3553;2,11,3553;2,12,3553;2,13,3553;2,14,3553;2,15,3553;3,0,3553;3,1,3553;3,2,3553;3,3,3553;3,4,3553;3,5,3553;3,6,3553;3,7,3553;3,8,3553;3,9,3553;3,10,3553;3,11,3553;3,12,3553;3,13,3553;3,14,3553;3,15,3553;4,0,3553;4,1,3553;4,2,3553;4,3,3553;4,4,3553;4,5,3553;4,6,3553;4,7,3553;4,8,3553;4,9,3553;4,10,3553;4,11,3553;4,12,3553;4,13,3553;4,14,3553;4,15,3553 --disable-accelerated-video-decode --service-request-channel-token=0D8FF00DFB5A0747C9C14EB26CE64E22 --rendere
+root     25489  0.0  0.0      0     0 ?        S    15:05   0:00 [kworker/3:2]
+amit     25545  0.1  0.1 611220 34972 ?        Ssl  15:07   0:00 gvim os-warmup.tex
+root     25553  0.0  0.0      0     0 ?        S    15:07   0:00 [kworker/2:2]
+root     25555  0.0  0.0      0     0 ?        S    15:07   0:00 [kworker/u16:1]
+amit     25611  0.0  0.0 274576 14400 ?        S    15:09   0:00 /usr/local/eclipse/eclipse
+amit     25612 35.0  2.4 5010444 804896 ?      Sl   15:09   1:08 /usr/java/default/bin/java -Dosgi.requiredJavaVersion=1.7 -XX:MaxPermSize=256m -Xms256m -Xmx1024m -jar /usr/local/eclipse-mars-4.5.1//plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar -os linux -ws gtk -arch x86_64 -showsplash /usr/local/eclipse-mars-4.5.1//plugins/org.eclipse.platform_4.5.1.v20150904-0015/splash.bmp -launcher /usr/local/eclipse-mars-4.5.1/eclipse -name Eclipse --launcher.library /usr/local/eclipse-mars-4.5.1//plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.300.v20150602-1417/eclipse_1612.so -startup /usr/local/eclipse-mars-4.5.1//plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar --launcher.appendVmargs -exitdata 900005 -product org.eclipse.epp.package.java.product -vm /usr/java/default/bin/java -vmargs -Dosgi.requiredJavaVersion=1.7 -XX:MaxPermSize=256m -Xms256m -Xmx1024m -jar /usr/local/eclipse-mars-4.5.1//plugins/org.eclipse.equinox.launcher_1.3.100.v20150511-1540.jar
+amit     25837  1.4  0.2 807052 75200 pts/0    Rl+  15:11   0:00 kwrite ps-sample.log
+root     25845  0.0  0.0      0     0 ?        S    15:11   0:00 [kworker/3:1]
+amit     25869  0.0  0.0 149856  3692 pts/2    R+   15:12   0:00 ps augx
