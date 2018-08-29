@@ -12,7 +12,7 @@
 #include <string.h>
 
 const int MAX_LENGTH = 1024;
-const int MAX_TOKENS = 100;
+const int MAX_TOKENS = 200;
 
 char **parseInput(char *s, char *delimiter, int *numTokens);
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 
 
 
-char **parseInput(char *s, char *delimiter, int *numTokens) 
+char **parseInput(char *s, char *delimiter, int *numTokens)
 {
     char *nextToken;
     char **token = (char **) malloc (sizeof(char *) * MAX_TOKENS);
@@ -56,7 +56,7 @@ char **parseInput(char *s, char *delimiter, int *numTokens)
     /* tokenize the string s */
     nextToken = strtok(s, delimiter);
     *numTokens = 0;
-    while (nextToken != NULL) {
+    while (nextToken != NULL && *numTokens < MAX_TOKENS) {
         token[*numTokens] = (char *) malloc(sizeof(char) * (strlen(nextToken)+1));
         strcpy(token[*numTokens], nextToken);
         (*numTokens)++;
