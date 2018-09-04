@@ -46,14 +46,15 @@ your bill of health from Valgrind!
 
 List known bugs that you weren't able to fix (or ran out of time to fix).
 
-## Discussion
+## Reflection and Self Assessment
 
 Discuss the issues you encountered during development and testing. What
 problems did you have? What did you have to research and learn on your
 own? What kinds of errors did you get? How did you fix them?
 
 What parts of the project did you find challenging? Is there anything that
-finally "clicked" for you in the process of working on this project?
+finally "clicked" for you in the process of working on this project? How well
+did the development and testing process go for you?
 
 ## Sources used
 
