@@ -24,7 +24,8 @@
 # macro CFLAGS defines the default set of options or flags used 
 # with the C compiler.
 CC=gcc
-CFLAGS=-g -std=gnu89 -Wall -Wpointer-arith -Wstrict-prototypes 
+#CFLAGS=-g -std=gnu89 -Wall -Wextra -Wpointer-arith -Wstrict-prototypes 
+CFLAGS= -Wall -Wextra -Wpointer-arith -Wstrict-prototypes -std=gnu89 -O2
 
 # Recognize files with .c and .o extensions
 .SUFFIXES: .o .c
