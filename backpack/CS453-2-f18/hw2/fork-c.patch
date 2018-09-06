@@ -1,0 +1,19 @@
+--- fork1.c     2018-09-05 18:19:39.534532279 -0600
++++ fork.c      2018-09-05 17:21:22.341261054 -0600
+@@ -758,13 +758,13 @@
+ 
+        set_max_threads(MAX_THREADS);
+ 
+-       init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = max_threads/2;
+-       init_task.signal->rlim[RLIMIT_NPROC].rlim_max = max_threads/2;
++       init_task.signal->rlim[RLIMIT_NPROC].rlim_cur = (max_threads/95)*100;
++       init_task.signal->rlim[RLIMIT_NPROC].rlim_max = (max_threads/95)*100;
+        init_task.signal->rlim[RLIMIT_SIGPENDING] =
+                init_task.signal->rlim[RLIMIT_NPROC];
+ 
+        for (i = 0; i < UCOUNT_COUNTS; i++) {
+-               init_user_ns.ucount_max[i] = max_threads/2;
++               init_user_ns.ucount_max[i] = (max_threads/95)*100;
+        }
+ 
+ #ifdef CONFIG_VMAP_STACK
