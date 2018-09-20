@@ -23,12 +23,12 @@ char  buffCopy[MAXLINE];
 int status;
 int main(void)
 {
+	char *line;
+	char *prompt = "$>";
 	init_history();
 	char  buff[MAXLINE];
 	fprintf(stderr,"$");
-	
 	while (fgets(buff, MAXLINE, stdin) != NULL) {
-
 		int last = strlen(buff);
 		last--;
 		buff[last] = '\0';
@@ -38,7 +38,12 @@ int main(void)
 		}
 		strncpy(buffCopy, buff, MAXLINE);
 		char *token = strtok(buffCopy, " ");
-		add_history(buff);
+		line = token;
+		using_history();
+		while((line=readline(prompt))){
+		printf("%s\n",token);
+		add_history(token);
+		free(token);
 		//smash_get_input(buff);
 		if(strcmp("", token)==0){
 			fprintf(stderr,"$");
@@ -50,7 +55,10 @@ int main(void)
 		}
 		else if (strcmp("cd", token) == 0) {
 			//changes directory
-			char* token = strtok(buff," ");		  
+			add_history(line);
+			free(line);
+			printf("%s",line);
+			char* token = strtok(buff"");
 			change_my_dir(token);
 		}
 		else if(strcmp("history",token) == 0) {
@@ -88,12 +96,13 @@ int main(void)
 
 		}
 		//makes sure $ symbol starts each new line
-		fprintf(stderr,"$");	
+		fprintf(stderr,"$");
 	  }
+}
 	//clears history after commands have stopped being entered
 	clear_history();
 	return EXIT_SUCCESS;
-  
+
 }
 char* strncpy_safe(char *dst, const char *src, size_t len)
 {
@@ -137,7 +146,7 @@ void change_my_dir(char* token){
 	token = strtok(NULL," ");
 	int success = chdir(token);
 	if (success == 0)
-	{	
+	{
 		change();
 	}
 	else
@@ -155,7 +164,7 @@ void oops(char *token){
 //changes directory
 void change(){
 		char* cur_dir = getcwd(NULL, 0);
-		printf("%s\n", cur_dir);  
+		printf("%s\n", cur_dir);
 		free(cur_dir);
 }
 //prints token

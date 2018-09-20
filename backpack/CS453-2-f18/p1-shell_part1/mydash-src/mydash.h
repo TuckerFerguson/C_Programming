@@ -29,6 +29,6 @@ void	err_sys(const char *, ...);
 #define MAX_LENGTH 1024
 #define MAX_TOKENS 2048
 char **parseInput(char *s, char *delimiter, int *numTokens);
-
+char *git_version(void);
 
 #endif	/* __MYDASH_H */

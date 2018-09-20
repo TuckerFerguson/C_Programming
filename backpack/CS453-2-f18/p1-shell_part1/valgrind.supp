@@ -4,25 +4,25 @@
    sendmsg(msg.msg_name)
    fun:__sendmsg_nocancel
    fun:readline
-   ...
+   fun:main
 }
 
 {
     readline_leaks
     Memcheck:Leak
-    fun:*alloc
-    ...
+    fun:malloc
+    fun:xmalloc
     fun:readline
-    ...
+    fun:main
 }
 
 {
     history_leaks 
     Memcheck:Leak
-    fun:*alloc
-    ...
+    fun:malloc
+    fun:xmalloc
     fun:add_history
-    ...
+    fun:main
 }
 
 {
@@ -39,4 +39,3 @@
    fun:_dl_start
    obj:/usr/lib64/ld-2.18.so
 }
-
