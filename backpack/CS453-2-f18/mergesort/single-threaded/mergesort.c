@@ -13,11 +13,11 @@ void serial_mergesort(int A[], int p, int r);
 void merge(int A[], int p, int q, int r);
 void insertion_sort(int A[], int p, int r);
 //New function added for multi threading
-void parallel_mergesort(int A[], int p, int r)
+void parallel_mergesort(int A[], int p, int r);
 
 
 //new code
-const int INSERTION_SORT_THRESHOLD = argv(2);
+const int INSERTION_SORT_THRESHOLD = 100;
 
 
 //original code \/
