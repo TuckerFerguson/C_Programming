@@ -1,4 +1,8 @@
-
+/*
+*
+*@author Shane Panter (Didnt add much to this file if anything at all)
+*
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,6 +16,12 @@
 void serial_mergesort(int A[], int p, int r); 
 void merge(int A[], int p, int q, int r);
 void insertion_sort(int A[], int p, int r);
+//New function added for multi threading
+void parallel_mergesort(void* arg);
+int low;
+int high;
+int level;
+int n;
 
 const int INSERTION_SORT_THRESHOLD = 100; //based on trial and error
 
@@ -47,7 +57,9 @@ void serial_mergesort(int A[], int p, int r)
 {
 	if (r-p+1 <= INSERTION_SORT_THRESHOLD)  {
 			insertion_sort(A,p,r);
+		//printf("inside insertion sort\n");
 	} else {
+		//printf("inside serial merge sort\n");
 		int q = (p+r)/2;
 		serial_mergesort(A, p, q);
 		serial_mergesort(A, q+1, r);

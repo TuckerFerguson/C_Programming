@@ -12,8 +12,17 @@
 void serial_mergesort(int A[], int p, int r); 
 void merge(int A[], int p, int q, int r);
 void insertion_sort(int A[], int p, int r);
+//New function added for multi threading
+void parallel_mergesort(int A[], int p, int r)
 
-const int INSERTION_SORT_THRESHOLD = 100; //based on trial and error
+
+//new code
+const int INSERTION_SORT_THRESHOLD = argv(2);
+
+
+//original code \/
+//const int INSERTION_SORT_THRESHOLD = 100; //based on trial and error
+
 
 
 /*
@@ -44,6 +53,24 @@ void insertion_sort(int A[], int p, int r)
  * description: Sort the section of the array A[p..r].
  */
 void serial_mergesort(int A[], int p, int r) 
+{
+	if (r-p+1 <= INSERTION_SORT_THRESHOLD)  {
+			insertion_sort(A,p,r);
+	} else {
+		int q = (p+r)/2;
+		serial_mergesort(A, p, q);
+		serial_mergesort(A, q+1, r);
+		merge(A, p, q, r);
+	}
+}
+
+/*
+*
+*parrallel_mergesort(int A[], int p, int r):
+*
+*description: sort
+*/
+void parrallel_mergesort(int A[], int p, int r) 
 {
 	if (r-p+1 <= INSERTION_SORT_THRESHOLD)  {
 			insertion_sort(A,p,r);
