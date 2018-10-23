@@ -13,7 +13,7 @@ CFLAGS=-I. -O  -Wall
 LDFLAGS=-lpthread
 OBJS=semaphore.o
 
-all: AlarmMonitor.class TestAlarm.class Turtle.class
+all: FileAccess.class ThreadAccess.class monitorDriver.class
 
 clean:
 	/bin/rm -f *.o *.class log*
