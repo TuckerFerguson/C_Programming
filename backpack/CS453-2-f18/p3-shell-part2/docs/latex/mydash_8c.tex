@@ -1,0 +1,136 @@
+\hypertarget{mydash_8c}{\section{mydash-\/src/mydash.c File Reference}
+\label{mydash_8c}\index{mydash-\/src/mydash.\-c@{mydash-\/src/mydash.\-c}}
+}
+{\ttfamily \#include \char`\"{}error.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$unistd.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}mydash.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$sys/types.\-h$>$}\\*
+{\ttfamily \#include $<$sys/wait.\-h$>$}\\*
+{\ttfamily \#include $<$readline/readline.\-h$>$}\\*
+{\ttfamily \#include $<$readline/history.\-h$>$}\\*
+{\ttfamily \#include $<$pwd.\-h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{mydash_8c_a41101847771d39a4f0a7f9395061c629}{M\-A\-X\-A\-R\-G\-S}~2048
+\item 
+\#define \hyperlink{mydash_8c_a3e937c42922f7601edb17b747602c471}{M\-A\-X\-L\-I\-N\-E}~4096
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mydash_8c_ac659645cb9bfba2983578849d8300192}{execute} (char $\ast$)
+\item 
+void \hyperlink{mydash_8c_a864d04a3040d9081adab019b398a6b36}{empty} (char $\ast$)
+\item 
+void \hyperlink{mydash_8c_af986bd0575ec9b913dfab4b8422509ae}{version} (void)
+\item 
+void \hyperlink{mydash_8c_acf0385803573f1f780fe25cf920b3393}{change\-\_\-my\-\_\-dir} (char $\ast$)
+\item 
+void \hyperlink{mydash_8c_a3506bdcf5b5e52228dca67d72738e0e6}{print\-Token} (char $\ast$)
+\item 
+void \hyperlink{mydash_8c_aaa6d3da39b05fc536a1c9ff8c284f4a6}{change} (void)
+\item 
+void \hyperlink{mydash_8c_acc06a9fe7c85d339f7739f6918e4acfb}{empty\-Change} (void)
+\item 
+void \hyperlink{mydash_8c_a606bfe6d0c4e455634f8dfb4830b5e1d}{history\-Handler} (char $\ast$)
+\item 
+char $\ast$$\ast$ \hyperlink{mydash_8c_a2879e647252019f4dcc8260c2b91fd73}{chop\-\_\-line\-\_\-exec} (const char $\ast$)
+\item 
+char $\ast$ \hyperlink{mydash_8c_ad2a9772ff7bec3e17d7c9847443aa590}{strncpy\-\_\-safe} (char $\ast$dst, const char $\ast$src, size\-\_\-t len)
+\item 
+int \hyperlink{mydash_8c_a840291bc02cba5474a4cb46a9b9566fe}{main} (void)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{mydash_8c_a41101847771d39a4f0a7f9395061c629}{\index{mydash.\-c@{mydash.\-c}!M\-A\-X\-A\-R\-G\-S@{M\-A\-X\-A\-R\-G\-S}}
+\index{M\-A\-X\-A\-R\-G\-S@{M\-A\-X\-A\-R\-G\-S}!mydash.c@{mydash.\-c}}
+\subsubsection[{M\-A\-X\-A\-R\-G\-S}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-A\-R\-G\-S~2048}}\label{mydash_8c_a41101847771d39a4f0a7f9395061c629}
+\hypertarget{mydash_8c_a3e937c42922f7601edb17b747602c471}{\index{mydash.\-c@{mydash.\-c}!M\-A\-X\-L\-I\-N\-E@{M\-A\-X\-L\-I\-N\-E}}
+\index{M\-A\-X\-L\-I\-N\-E@{M\-A\-X\-L\-I\-N\-E}!mydash.c@{mydash.\-c}}
+\subsubsection[{M\-A\-X\-L\-I\-N\-E}]{\setlength{\rightskip}{0pt plus 5cm}\#define M\-A\-X\-L\-I\-N\-E~4096}}\label{mydash_8c_a3e937c42922f7601edb17b747602c471}
+
+
+\subsection{Function Documentation}
+\hypertarget{mydash_8c_aaa6d3da39b05fc536a1c9ff8c284f4a6}{\index{mydash.\-c@{mydash.\-c}!change@{change}}
+\index{change@{change}!mydash.c@{mydash.\-c}}
+\subsubsection[{change}]{\setlength{\rightskip}{0pt plus 5cm}void change (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_aaa6d3da39b05fc536a1c9ff8c284f4a6}
+\hypertarget{mydash_8c_acf0385803573f1f780fe25cf920b3393}{\index{mydash.\-c@{mydash.\-c}!change\-\_\-my\-\_\-dir@{change\-\_\-my\-\_\-dir}}
+\index{change\-\_\-my\-\_\-dir@{change\-\_\-my\-\_\-dir}!mydash.c@{mydash.\-c}}
+\subsubsection[{change\-\_\-my\-\_\-dir}]{\setlength{\rightskip}{0pt plus 5cm}void change\-\_\-my\-\_\-dir (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_acf0385803573f1f780fe25cf920b3393}
+\hypertarget{mydash_8c_a2879e647252019f4dcc8260c2b91fd73}{\index{mydash.\-c@{mydash.\-c}!chop\-\_\-line\-\_\-exec@{chop\-\_\-line\-\_\-exec}}
+\index{chop\-\_\-line\-\_\-exec@{chop\-\_\-line\-\_\-exec}!mydash.c@{mydash.\-c}}
+\subsubsection[{chop\-\_\-line\-\_\-exec}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$$\ast$ chop\-\_\-line\-\_\-exec (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{line}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_a2879e647252019f4dcc8260c2b91fd73}
+\hypertarget{mydash_8c_a864d04a3040d9081adab019b398a6b36}{\index{mydash.\-c@{mydash.\-c}!empty@{empty}}
+\index{empty@{empty}!mydash.c@{mydash.\-c}}
+\subsubsection[{empty}]{\setlength{\rightskip}{0pt plus 5cm}void empty (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_a864d04a3040d9081adab019b398a6b36}
+\hypertarget{mydash_8c_acc06a9fe7c85d339f7739f6918e4acfb}{\index{mydash.\-c@{mydash.\-c}!empty\-Change@{empty\-Change}}
+\index{empty\-Change@{empty\-Change}!mydash.c@{mydash.\-c}}
+\subsubsection[{empty\-Change}]{\setlength{\rightskip}{0pt plus 5cm}void empty\-Change (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_acc06a9fe7c85d339f7739f6918e4acfb}
+\hypertarget{mydash_8c_ac659645cb9bfba2983578849d8300192}{\index{mydash.\-c@{mydash.\-c}!execute@{execute}}
+\index{execute@{execute}!mydash.c@{mydash.\-c}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}void execute (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_ac659645cb9bfba2983578849d8300192}
+\hypertarget{mydash_8c_a606bfe6d0c4e455634f8dfb4830b5e1d}{\index{mydash.\-c@{mydash.\-c}!history\-Handler@{history\-Handler}}
+\index{history\-Handler@{history\-Handler}!mydash.c@{mydash.\-c}}
+\subsubsection[{history\-Handler}]{\setlength{\rightskip}{0pt plus 5cm}void history\-Handler (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_a606bfe6d0c4e455634f8dfb4830b5e1d}
+\hypertarget{mydash_8c_a840291bc02cba5474a4cb46a9b9566fe}{\index{mydash.\-c@{mydash.\-c}!main@{main}}
+\index{main@{main}!mydash.c@{mydash.\-c}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_a840291bc02cba5474a4cb46a9b9566fe}
+\hypertarget{mydash_8c_a3506bdcf5b5e52228dca67d72738e0e6}{\index{mydash.\-c@{mydash.\-c}!print\-Token@{print\-Token}}
+\index{print\-Token@{print\-Token}!mydash.c@{mydash.\-c}}
+\subsubsection[{print\-Token}]{\setlength{\rightskip}{0pt plus 5cm}void print\-Token (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{token}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_a3506bdcf5b5e52228dca67d72738e0e6}
+\hypertarget{mydash_8c_ad2a9772ff7bec3e17d7c9847443aa590}{\index{mydash.\-c@{mydash.\-c}!strncpy\-\_\-safe@{strncpy\-\_\-safe}}
+\index{strncpy\-\_\-safe@{strncpy\-\_\-safe}!mydash.c@{mydash.\-c}}
+\subsubsection[{strncpy\-\_\-safe}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ strncpy\-\_\-safe (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{dst, }
+\item[{const char $\ast$}]{src, }
+\item[{size\-\_\-t}]{len}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_ad2a9772ff7bec3e17d7c9847443aa590}
+\hypertarget{mydash_8c_af986bd0575ec9b913dfab4b8422509ae}{\index{mydash.\-c@{mydash.\-c}!version@{version}}
+\index{version@{version}!mydash.c@{mydash.\-c}}
+\subsubsection[{version}]{\setlength{\rightskip}{0pt plus 5cm}void version (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}\label{mydash_8c_af986bd0575ec9b913dfab4b8422509ae}
