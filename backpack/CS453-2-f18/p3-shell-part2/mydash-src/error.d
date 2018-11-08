@@ -1,1 +1,2 @@
-error.o: error.c mydash.h
+error.o: error.c mydash.h ../../list/include/List.h \
+ ../../list/include/Node.h ../../list/include/Node.h job.h

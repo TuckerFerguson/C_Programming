@@ -9,11 +9,20 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <pwd.h>
-
+#include <job.h>
+#include    "../../list/include/Node.h"
+#include    "../../list/include/List.h"
 // @Author Tucker Ferguson 
 // @Date 9/17/18
+struct list* jobs;
+struct list* runningJobs;
+
+//new
 
 
+
+
+//
 #define MAXARGS 3000
 #define MAXLINE 4096
 void execute(char *);

@@ -1,6 +1,7 @@
 CC=gcc
+INCLUDES = -I../../list/include
 CFLAGS=-g  -Wall -Wextra -Wpointer-arith -Wstrict-prototypes -std=gnu89 -O2 -I. $(INCLUDES) -MMD
-LIBS=-lreadline -lncurses
+LIBS=-lreadline -lncurses -L../../list/lib -lmylib 
 #Change above line to the following to make it link with readline
 #LIBS=-lreadline -lncurses
 MV=/bin/mv
@@ -9,8 +10,8 @@ PROGS=mydash
 
 all: $(PROGS)
 
-mydash: mydash.o error.o git_version.o parsing.o
-	$(CC) $(CFLAGS) -o $@  $^ $(LIBS)
+mydash: mydash.o error.o git_version.o parsing.o job.o
+	$(CC) $(CFLAGS) -o $@  $^ $(LIBS) $(INCLUDES)
 	$(MV) $@ ../
 
 ##

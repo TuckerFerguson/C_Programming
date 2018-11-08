@@ -6,7 +6,11 @@
 #include	<stdlib.h>		
 #include	<sysexits.h>
 #include	<string.h>
-#include	<unistd.h>	
+#include	<unistd.h>
+#include "../../list/include/List.h"
+#include "../../list/include/Node.h"
+#include "job.h"
+
 
 #define	MAXLINE	4096			/* max line length */
 
@@ -29,6 +33,7 @@ void	err_sys(const char *, ...);
 #define MAX_LENGTH 1024
 #define MAX_TOKENS 2048
 char **parseInput(char *s, char *delimiter, int *numTokens);
-char *git_version(void);
+const char* git_version(void);
+
 
 #endif	/* __MYDASH_H */
