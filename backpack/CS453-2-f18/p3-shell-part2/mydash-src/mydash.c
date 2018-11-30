@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "job.h"
 #include "mydash.h"
+#include "List.h"
 #include <stdio.h>
 #include <sys/types.h>
 #include <sys/wait.h>
@@ -51,9 +52,12 @@ char *strncpy_safe(char *dst, const char *src, size_t len);
 // int exit_status(int);
 //
 
+
+
 int jobID;
 
 ListPtr jobs;
+ListPtr jobsList;
 struct list* activeJobs;
 
 
@@ -92,11 +96,11 @@ int main(void)
 
     while ((line = readline(prompt)))
     {
-        if (strcmp("", line) == 0)
+        if (strlen(line) == 0)
         {   
             //new
             free(line);
-            display_update_jobs();
+            //display_update_jobs();
             //
             continue;
         }
@@ -185,6 +189,21 @@ void execute(char *token)
     else if (pid == -1)
     {
         fprintf(stderr, "error no good");
+    }else if(pid == 0){
+         if (index_of_ampersand >= 0)
+            {
+                start_background_job(line, tokenized_command_and_args, index_of_ampersand);
+                write(error_pipe[1], FAIL, strlen(FAIL)+1);
+                //give write time to propagate
+                usleep(1000);
+            }
+            else
+            {
+                start_job(line, tokenized_command_and_args);
+            }
+//            free_command_and_Line(line, tokenized_command_and_args);
+            exit(EXIT_FAILURE);
+        }
     }
     else if (pid == 0)
     { 
@@ -244,202 +263,5 @@ void version()
     exit(0);
 }
 
-void init_job_manager()
-{
-    jobs = createList(equals, toString, freeObject);
-    jobID = 0;
-}
-
- int start_background_job(char* line, char** tokenized_command_and_args, int index_of_ampersand)
- {
-     remove_ampersand(tokenized_command_and_args, index_of_ampersand);
-     return execCmd(line, tokenized_command_and_args);
- }
-
- void log_background_job(int pid, char* line)
- {
-     char* copy = (char*)malloc(strlen(line) + 1 *sizeof(char));
-     strcpy(copy, line);
-     Jobs* job = job_maker(pid, copy, ++jobID);
-     NodePtr node = createNode(job);
-     addAtRear(jobs, node);
-     job_creation_printout(job);
- }
-
-int start_job(char* line, char** tokenized_command_and_args)
- {
-    return execCmd(line, tokenized_command_and_args);
- }
-
- int execCmd(char* line, char** tokenized_command_and_args)
-{
-    execvp(tokenized_command_and_args[0], tokenized_command_and_args);
-    err_ret("Couldn't execute: %s", line);
-     return FALSE;
- }
-
-void print_jobs()
- {
-     if (jobs->size == 0) 
-         printf("No jobs to display\n");
-     else
-         printList(jobs);
- }
-
-void update_completed_jobs()
- {
-     
-     NodePtr traversal_node = jobs->head;
-    if (traversal_node == NULL) return;
-    
-    do 
-    {
-        Jobs* jobs = (Jobs*)(traversal_node->obj);
-        
-        jobs->state = process_state(jobs->pid);
-         if (jobs->state== DONE)
-             jobs->status = status(jobs->pid);
-     }
-     while((traversal_node = traversal_node->next));
- }
-
-int process_state(int pid)
- {
-    int status;
-    int child_pid = waitpid(pid, &status, WNOHANG);
-    if (!child_pid && WIFEXITED(status))
-    return ON;
-    else
-    return DONE;
- }
-
-int exit_status(int pid)
- {
-     int status;
-     int child_pid = waitpid(pid, &status, WUNTRACED);
-
-     if (child_pid == -1)
-     return NORM;
-     if (!child_pid && (WEXITSTATUS(status) || WIFSIGNALED(status))) // && WTERMSIG(status) <= SIGUNUSED && WTERMSIG(status) >= SIGHUP))
-     return PROB;
-     else
-        return NORM;
-}
-
-void free_jobs()
- {
-    freeList(jobs);
-}
-
-int status(int pid){
-    int status;
-    int child_pid = waitpid(pid, &status, WUNTRACED);
-     if(child_pid == -1){
-         return NORM;
-     }
-     if(!child_pid && WIFSIGNALED(status)){
-         return PROB;
-     }
-     else{
-         return NORM;
-     }
-}
-
-void remove_completed_jobs()
-{
-     NodePtr traversal_node = jobs->head;
-     if (traversal_node == NULL) return;
-    
-     while (traversal_node != NULL)
-     {
-         Jobs* jobs = (Jobs*)(traversal_node->obj);
-        
-         if (jobs->state== DONE)
-         {
-             NodePtr copy = traversal_node->next;
-             freeNode(removeNode(jobs, traversal_node), freeObject);
-             traversal_node = copy;
-        }
-         else
-         {
-             traversal_node = traversal_node->next;
-         }
-     }
-    
-    if (jobs->size == 0) 
-         jobID = 0;
- }
-
-void display_updated_jobs()
-{
-    update_completed_jobs();
-    print_jobs();
-    remove_completed_jobs();
-}
-
-int is_background_job(char** tokenized_command_and_args)
-{
-    
-    int token_with_ampersand;
-    for (token_with_ampersand = 0; token_with_ampersand < MAX_TOKENS && tokenized_command_and_args[token_with_ampersand]; ++token_with_ampersand);
-    
-    --token_with_ampersand;
-    if (strstr(tokenized_command_and_args[token_with_ampersand], "&"))
-        return token_with_ampersand;
-    if (token_with_ampersand >= 1 && strstr(tokenized_command_and_args[token_with_ampersand-1], "&"))
-        return token_with_ampersand;
-    
-    return -1;
-}
-
-void remove_ampersand(char** command_and_args, int index_of_ampersand)
-{
-    char* token_with_ampersand = command_and_args[index_of_ampersand];
-    
-    if (strlen(token_with_ampersand) == 1)
-    {
-        command_and_args[index_of_ampersand] = (char*)0;
-        return;
-    }
-    
-    while (*token_with_ampersand)
-    {
-        if (*token_with_ampersand == '&')
-        {
-            *token_with_ampersand = (char*)0;
-            return;
-        }
-        ++token_with_ampersand;
-    }
-}
-
-char** get_tokenized_command(char * line){
-	char *next;
-    const char *delim = " ";
-    int cnt=0;
-    char **tokens;
-    
-    char* copy = (char*)malloc(strlen(line) * sizeof(char));
-    strcpy(copy, line);
-    
-    tokens = (char**)malloc(MAX_TOKENS * sizeof(char*));
-
-    next = strtok(copy, delim);
-    while (next) {
-        tokens[cnt] = (char *) malloc(strlen(next)+1);
-        char * token = tokens[cnt++];
-        strcpy(token, next);
-        next =strtok(NULL, delim);
-    }
-    tokens[cnt] = (char *) 0; /* make the field array be null-terminated */
-
-    free(copy);
-    return tokens;
-}
-
-void job_creation_printout(jobPtr job){
-
-    printf("%d %d %s\n",job->job_num,job->pid,job->cmd);
-}
 
 /* vim: set ts=4: */

@@ -44,9 +44,9 @@ int start_job(char*, char**);
 
 void log_background_job(int, char*);
 
-//void update_completed_jobs();
+void update_completed_jobs(void);
 
-//void remove_completed_jobs();
+void remove_completed_jobs(void);
 
 int process_state(int);
 
