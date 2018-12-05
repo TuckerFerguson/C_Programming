@@ -21,32 +21,12 @@ ListPtr jobsList;
 struct list* activeJobs;
 char* isAmpersand(char* cmd)
 {	
-	//printf("cmd for ampersand %s\n",cmd);
+	printf("cmd for ampersand %s\n",cmd);
 	char* copy = malloc(strlen(cmd) + 1);
 	strncpy(copy,cmd,strlen(cmd) + 1);
 	copy = strchr(copy,'&');
 	return copy;
 }
-
-// char* handle_ampersand(char* cmd)
-// {
-// 	int i = 0;
-// 	char* copy = malloc(strlen(cmd) + 1);
-// 	strncpy(copy,cmd,strlen(cmd+1));
-// 	//printf("copy[count] = %s\n",copy[count]);
-// 	//if(strcmp(cmd,"&"));
-// 	//{ return NULL;}
-
-// 	while(i < strlen(cmd) + 1) 
-// 	{
-// 		if(cmd[i] != '&')
-// 		{
-// 			copy[i] = cmd[i];
-// 		}
-// 		i++;
-// 	}
-// 	return copy;
-// }
 
 jobPtr job_maker(const int pid,const char* cmd, int job_num)
 {
@@ -89,8 +69,9 @@ int start_job(char* line, char** tokenized_command_and_args)
  }
 
  int execCmd(char* line, char** tokenized_command_and_args)
-{
-    execvp(tokenized_command_and_args[0], tokenized_command_and_args);
+{   
+    printf("command: %s\n ",line);
+    execvp(line, tokenized_command_and_args);
     err_ret("Couldn't execute: %s", line);
      return FALSE;
  }
@@ -187,7 +168,7 @@ void remove_completed_jobs()
          jobID = 0;
  }
 
-void display_updated_jobs()
+void display_update_jobs()
 {
     update_completed_jobs();
     print_jobs();
@@ -199,7 +180,7 @@ int is_background_job(char** tokenized_command_and_args)
     
     int token_with_ampersand;
     for (token_with_ampersand = 0; token_with_ampersand < MAX_TOKENS && tokenized_command_and_args[token_with_ampersand]; ++token_with_ampersand);
-    
+    printf("token with ambersand: %d",token_with_ampersand);
     --token_with_ampersand;
     if (strstr(tokenized_command_and_args[token_with_ampersand], "&"))
         return token_with_ampersand;
@@ -209,54 +190,10 @@ int is_background_job(char** tokenized_command_and_args)
     return -1;
 }
 
-// void remove_ampersand(char** command_and_args, int index_of_ampersand)
-// {
-//     char* token_with_ampersand = command_and_args[index_of_ampersand];
-    
-//     if (strlen(token_with_ampersand) == 1)
-//     {
-//         command_and_args[index_of_ampersand] = (char*)0;
-//         return;
-//     }
-    
-//     while (*token_with_ampersand)
-//     {
-//         if (*token_with_ampersand == '&')
-//         {
-//             *token_with_ampersand = (char*)0;
-//             return;
-//         }
-//         ++token_with_ampersand;
-//     }
-// }
-
-// char** get_tokenized_command(char * line){
-// 	char *next;
-//     const char *delim = " ";
-//     int cnt=0;
-//     char **tokens;
-    
-//     char* copy = (char*)malloc(strlen(line) * sizeof(char));
-//     strcpy(copy, line);
-    
-//     tokens = (char**)malloc(MAX_TOKENS * sizeof(char*));
-
-//     next = strtok(copy, delim);
-//     while (next) {
-//         tokens[cnt] = (char *) malloc(strlen(next)+1);
-//         char * token = tokens[cnt++];
-//         strcpy(token, next);
-//         next =strtok(NULL, delim);
-//     }
-//     tokens[cnt] = (char *) 0; /* make the field array be null-terminated */
-
-//     free(copy);
-//     return tokens;
-// }
 
 void job_creation_printout(jobPtr job){
 
-    printf("%d %d %s\n",job->job_num,job->pid,job->cmd);
+    printf("[%d] %d %s\n",job->job_num,job->pid,job->cmd);
 }
 
 
@@ -271,9 +208,8 @@ char* toString (const void* job)
 {
 	jobPtr objP = (jobPtr) job;
     temp = (char*)malloc(sizeof(char)*strlen(objP->cmd)+1+MAXPID+4);
-    sprintf(temp, "%d %d %s %s \"%s\"", objP->pid, objP->job_num, 
-    objP->state == ON ? "Running" : "Completed",
-    objP->status == NORM ? "Normal" : "problem",
+    sprintf(temp, "[%d] %d %s  %s", objP->pid, objP->job_num, 
+    objP->state == ON ? "Running" : "Done",
     objP->cmd);
     return temp;
 }
@@ -288,22 +224,22 @@ void freeObject (void* job)
 
 void remove_ampersand(char** command_and_args, int index_of_ampersand)
 {
-    char* token_with_ampersand = command_and_args[index_of_ampersand];
+    char* token_with_ampersan = command_and_args[index_of_ampersand];
     
-    if (strlen(token_with_ampersand) == 1)
+    if (strlen(token_with_ampersan) == 1)
     {
         command_and_args[index_of_ampersand] = (char*)0;
         return;
     }
     
-    while (*token_with_ampersand)
+    while (*token_with_ampersan)
     {
-        if (*token_with_ampersand == '&')
+        if (*token_with_ampersan == '&')
         {
-            *token_with_ampersand = (char*)0;
+            *token_with_ampersan = (char*)0;
             return;
         }
-        ++token_with_ampersand;
+        ++token_with_ampersan;
     }
 }
 

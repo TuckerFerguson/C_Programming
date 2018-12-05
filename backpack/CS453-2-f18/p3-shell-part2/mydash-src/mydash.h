@@ -18,7 +18,8 @@
 					/* default file access permissions for new files */
 #define	DIR_MODE	(FILE_MODE | S_IXUSR | S_IXGRP | S_IXOTH)
 					/* default permissions for new directories */
-
+#define MAX_PIPE_LENGTH 4096
+#define FAIL "FAIL"
 
 /* prototypes for our own functions */
 

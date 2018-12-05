@@ -4,7 +4,10 @@
 #include "../../list/include/List.h"
 #include <sys/types.h>
 #include <unistd.h>
-
+#include "wait.h"
+#include "sys/stat.h"
+#include "sys/types.h"
+#include "errno.h"
 
 #define ON 1
 #define DONE 0
@@ -20,7 +23,7 @@ struct jobs {
 	int job_num;	
 	char* cmd;
 	int status;
-	int state;
+	char state;
 };
 
 char* isAmpersand(char*);
