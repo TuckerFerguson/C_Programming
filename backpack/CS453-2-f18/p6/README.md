@@ -1,10 +1,10 @@
-* Author: Tucker Ferguson
+* Author: Tucker Ferguson (With Code provided by Shane Panter)
 * Class: CS453 [Operating Systems] Section 2
 
 
 ## Overview
 
-This is a simple character driver called booga.
+This is my own memory management implemenntation specifically regarding malloc/free.
 
 ## Manifest
 
