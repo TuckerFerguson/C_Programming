@@ -50,3 +50,15 @@ Instructor provided code, the C standard library (wikipedia),
 Past Projects, Stackoverflow.com, github for referencing syntax.
 
 
+Progress:
+
+I have successfuly scimmed nearly ever example located in our examples directory that have anything to do with memory management as well as read
+section 5.4 and section 8.7 from C book. I also read and understand the provided pdf "Buddy-System-notes.pdf". This gave me enough fundamental 
+understanding to begin creating the functions specified in the write up. At the time of this current commit I only have the init and print functions
+compiling properly as well as progress on the malloc function. I will be systematically working at this as much as I can before the grades are submitted.
+
+I Will continue updating this readme as I make progress.
+
+
+Side note:
+Thank you for being the most upbeat professor I had all semester (and entire collegial career). You made difficult material fun to learn.

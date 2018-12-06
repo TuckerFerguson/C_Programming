@@ -46,9 +46,7 @@ struct pool {
 	struct block_header avail[MAX_KVAL];
 } pool;
 
-
-
-//This code was derived from theexamples included in ~/examples/memory-magament as well as googling some syntax
+//This code was derived from the examples included in ~/examples/memory-magament as well as googling some syntax
 int buddy_init(size_t size) { 
   int i;
 
@@ -105,17 +103,29 @@ int buddy_init(size_t size) {
 
 void *buddy_malloc(size_t size)
 {
-	return NULL;
+    // unsigned int bytes_toAlloc;
+    // buddy_init(size);
+    // bytes_toAlloc = ((size+sizeof(block_header)-1)/sizeof(block_header))+ 1);
+     return NULL;
+
 }
 
 
 void *buddy_calloc(size_t nmemb, size_t size) 
 {
-	return NULL;
+	// unsigned int bytes_toAlloc;
+    // buddy_init(size);
+    // bytes_toAlloc = ((size+sizeof(block_header)-1)/sizeof(block_header))+ 1);
+        return NULL;
 }
 
 void *buddy_realloc(void *ptr, size_t size) 
-{
+{   
+
+// unsigned int bytes_toAlloc;
+    // buddy_init(size);
+    // bytes_toAlloc = ((size+sizeof(block_header)-1)/sizeof(block_header))+ 1);
+        
 	return NULL;
 }
 
