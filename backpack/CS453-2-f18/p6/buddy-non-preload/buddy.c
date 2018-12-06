@@ -60,20 +60,26 @@ int buddy_init(size_t size) {
         errno = ENOMEM;
         return FALSE;
     }
-    if(pool.size < 0 || errno == ENOMEM){
-        perror("Could not allocate pool");
-        exit(1);
-    } 
-    if(size < DEFAULT_MAX_MEM_SIZE){
+    if(size == 0){
         pool.size = DEFAULT_MAX_MEM_SIZE;
-        pool.start = sbrk(1LL << pool.size);
+        pool.start = sbrk(1L << pool.size);
+        pool.start = sbrk(pool.size);
+    }
+    if(size < DEFAULT_MAX_MEM_SIZE && size >= 1){
+        pool.size = size;
+//make sure to change from int to long int        
+        pool.start = sbrk(1L << pool.size);
         pool.start = sbrk(pool.size);
     } else {
         pool.lgsize = power2(size);
         pool.size = size;
- //make sure to change from int to long int
+//make sure to change from int to long int
         pool.start = sbrk(1L << pool.size);
     }
+    if( errno == ENOMEM || pool.size < 0){
+        perror("Could not allocate pool");
+        exit(1);
+    } 
     for(i = 0; i < MAX_KVAL; i++){
         pool.avail[i].next = &pool.avail[i];
         pool.avail[i].prev = &pool.avail[i];
@@ -123,35 +129,33 @@ void printBuddyLists()
 {
       int i;
     for (i = 0; i < MAX_KVAL; i++) {
-        printf("List %d: head = %p", i, &pool.avail[i]);
-
+        printf("List %d: head: %p", i, &pool.avail[i]);
         if(pool.avail[i].tag == UNUSED){
-            printf(" --> <null>\n");
+            printf("NULL\n");
         } else {
-            printf(" --> [tag=%d, kval=%d, addr=%p]\n", pool.avail[i].next->tag, pool.avail[i].next->kval, &pool.avail[i].next);
+            printf("[tag: %d, kval: %d, addr: %p]\n", pool.avail[i].next->tag, pool.avail[i].next->kval, &pool.avail[i].next);
         }
     }
 }
 
 //Method for ensuring that the base address is a power of 2
-int power2(long int k) {
-    unsigned int count = 0;
-    k--;
 
-    while (k > 0) {
-        k >>= 1;
-        count++;
+int nextIndex(int size){
+    int i =0;
+    for(i = size; i <= MAX_KVAL; i++){
+        if(pool.avail[i].tag != UNUSED){
+            return i;
+        }
     }
-
-    return count;
+    return MAX_KVAL;
 }
+int nextPower(size_t size){
 
-int nextPower(size_t a){
-
-	int i=0,j=0;
+	int i=0;
+    int j=0;
 	while(i < DEFAULT_MAX_MEM_SIZE)
 	{
-		if(a < i){
+		if(size < i){
 			return j-1;
 		}else{
 			i = 1<<j;
@@ -161,13 +165,15 @@ int nextPower(size_t a){
 	return MAX_KVAL;
 }
 
-int nextIndex(int k){
-    int i =0;
-    for(i = k; i <= MAX_KVAL; i++){
-        if(pool.avail[i].tag != UNUSED){
-            return i;
-        }
+int power2(long int size) {
+    unsigned int counter = 0;
+    size--;
+
+    while (size > 0) {
+        size >>= 1;
+        counter++;
     }
-    return MAX_KVAL;
+
+    return counter;
 }
 
