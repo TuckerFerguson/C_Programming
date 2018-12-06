@@ -8,13 +8,16 @@
  * field only. All allocations are done in powers of two. All requests
  * are rounded up to the next power of two.
  * 
- * @author  TBD
+ * @author Tucker Ferguson & Shane Panter
  * 
  */
  
 #include "buddy.h"
 int initialized = FALSE;
 
+int next_Index(int k);
+int next_Power(size_t a);
+int power2(long int k);
 /* the header for an available block */
 struct block_header {
 	short tag;
@@ -45,7 +48,51 @@ struct pool {
 
 
 
+//This code was derived from theexamples included in ~/examples/memory-magament as well as googling some syntax
 int buddy_init(size_t size) { 
+  int i;
+
+    if(initialized){
+        return TRUE;
+    }
+
+    if(size > DEFAULT_MAX_MEM_SIZE){
+        errno = ENOMEM;
+        return FALSE;
+    }
+    if(pool.size < 0 || errno == ENOMEM){
+        perror("Could not allocate pool");
+        exit(1);
+    } 
+    if(size < DEFAULT_MAX_MEM_SIZE){
+        pool.size = DEFAULT_MAX_MEM_SIZE;
+        pool.start = sbrk(1LL << pool.size);
+        pool.start = sbrk(pool.size);
+    } else {
+        pool.lgsize = power2(size);
+        pool.size = size;
+ //make sure to change from int to long int
+        pool.start = sbrk(1L << pool.size);
+    }
+    for(i = 0; i < MAX_KVAL; i++){
+        pool.avail[i].next = &pool.avail[i];
+        pool.avail[i].prev = &pool.avail[i];
+        pool.avail[i].tag = UNUSED;
+        pool.avail[i].kval = i;
+    }
+
+    struct block_header *ptr = (struct block_header *) pool.start;
+    ptr->tag = FREE;
+    ptr->kval = pool.lgsize;
+
+    ptr->next = &pool.avail[ptr->kval];
+    ptr->prev = &pool.avail[ptr->kval];
+
+    pool.avail[ptr->kval].next = ptr->prev;
+    pool.avail[ptr->kval].prev = ptr->next;
+
+    pool.avail[pool.lgsize] = *ptr;
+    initialized = TRUE;
     return TRUE;
 }
 
@@ -74,5 +121,53 @@ void buddy_free(void *ptr)
 
 void printBuddyLists()
 {
+      int i;
+    for (i = 0; i < MAX_KVAL; i++) {
+        printf("List %d: head = %p", i, &pool.avail[i]);
+
+        if(pool.avail[i].tag == UNUSED){
+            printf(" --> <null>\n");
+        } else {
+            printf(" --> [tag=%d, kval=%d, addr=%p]\n", pool.avail[i].next->tag, pool.avail[i].next->kval, &pool.avail[i].next);
+        }
+    }
+}
+
+//Method for ensuring that the base address is a power of 2
+int power2(long int k) {
+    unsigned int count = 0;
+    k--;
+
+    while (k > 0) {
+        k >>= 1;
+        count++;
+    }
+
+    return count;
+}
+
+int nextPower(size_t a){
+
+	int i=0,j=0;
+	while(i < DEFAULT_MAX_MEM_SIZE)
+	{
+		if(a < i){
+			return j-1;
+		}else{
+			i = 1<<j;
+			j++;
+		}
+	}
+	return MAX_KVAL;
+}
+
+int nextIndex(int k){
+    int i =0;
+    for(i = k; i <= MAX_KVAL; i++){
+        if(pool.avail[i].tag != UNUSED){
+            return i;
+        }
+    }
+    return MAX_KVAL;
 }
 
