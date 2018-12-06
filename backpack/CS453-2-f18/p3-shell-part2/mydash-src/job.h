@@ -23,7 +23,7 @@ struct jobs {
 	int job_num;	
 	char* cmd;
 	int status;
-	char state;
+	int state;
 };
 
 char* isAmpersand(char*);
@@ -38,18 +38,17 @@ char* toString (const void*);
 
 void freeObject (void*);
 
-int execCmd(char *, char **);
+int execCmd(char **);
 
-int start_background_job(char*, char**, int);
+int start_background_job(char**, int);
 
-int start_job(char*, char**);
-
+int start_job( char**);
 
 void log_background_job(int, char*);
 
-void update_completed_jobs(void);
+void update_jobs(void);
 
-void remove_completed_jobs(void);
+void remove_jobs(void);
 
 int process_state(int);
 

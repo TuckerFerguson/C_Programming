@@ -18,6 +18,8 @@ INCLUDED FILES:
  * Makefile
   * mydash.c
    * mydash.h
+    *jobs.c
+     *jobs.h
     * README - this file
      * valgrind.supp
       * pm.png
@@ -101,3 +103,7 @@ Even figuring out how to edit the supression file took quite a bit of reading.
 
 Instructor provided code, the C standard library (wikipedia),
 Past Projects, Stackoverflow.com for referencing syntax.
+
+For part two I extensively used example code from instructor provided repo, I also had to refer to 
+google and stackoverflow several times for tips on how to manage background jobs, as well as other 
+topics required by this project.

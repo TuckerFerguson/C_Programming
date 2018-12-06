@@ -13,84 +13,74 @@
 #include <signal.h>
 #include <pwd.h>
 #include <job.h>
-#include    "../../list/include/Node.h"
-#include    "../../list/include/List.h"
+#include "../../list/include/Node.h"
+#include "../../list/include/List.h"
 
 //*******************************************
-// @Author Tucker Ferguson 
+// @Author Tucker Ferguson
 // @Date 9/17/18
 //*******************************************
 
 #define MAXARGS 3000
 #define MAXLINE 4096
 int index_of_ampersand;
+char *sanitize(char *token);
 void execute(char *);
 void empty(char *);
 void version(void);
 void change_my_dir(char *);
 void change(void);
 void print_jobs(void);
-void init_job_manager(void);
+void init_job(void);
 void update_completed_jobs(void);
 void remove_completed_jobs(void);
 void job_creation_printout(jobPtr job);
 void free_jobs(void);
-int execCmd(char *, char **);
+int execCmd(char **);
 void emptyChange(void);
-void display_update_jobs(void);
+void display_jobs(void);
 char **chop_line_exec(const char *);
 char *strncpy_safe(char *dst, const char *src, size_t len);
 int error_pipe[2];
 int state;
-// Boolean start_background_job(char*, char**, int);
 int state;
 int jobID;
 char child_status[MAXLINE];
 ListPtr jobs;
 ListPtr jobsList;
-struct list* activeJobs;
-
+struct list *activeJobs;
 
 int main(void)
 {
-    char *prompt = getenv("DASH_PROMPT");  
+    char *prompt = getenv("DASH_PROMPT");
     char *line;
     char lineCopy[MAXLINE];
     using_history();
- if (!(prompt = getenv("DASH_PROMPT")))
+    if (!(prompt = getenv("DASH_PROMPT")))
     {
         prompt = "mydash> ";
     }
-    
 
-//new 
-    init_job_manager();
+    //new
+    init_job();
 
     while ((line = readline(prompt)))
     {
         if (strlen(line) == 0)
-        {   
-            //new
+        {
             free(line);
-            display_update_jobs();
-            //
+            display_jobs();
             continue;
         }
 
-       // char** tokenized_command_and_args = get_tokenized_command(line);
-
-
-
         add_history(line);
-        // index_of_ampersand = is_background_job(tokenized_command_and_args);
-        // printf("amberand: %d",index_of_ampersand);
         strncpy(lineCopy, line, MAXLINE);
         char *token = strtok(lineCopy, " ");
         if (strcmp("exit", token) == 0)
         {
-        exit(0);
-        free_jobs();
-        kill(getpid(), SIGKILL);
+            exit(0);
+            free_jobs();
+            kill(getpid(), SIGKILL);
         }
         else if (strcmp("cd", token) == 0)
         {
@@ -101,76 +91,71 @@ int main(void)
         {
             version();
         }
-        else if (strcmp("history", token)==0)
+        else if (strcmp("history", token) == 0)
         {
-        HIST_ENTRY** history = history_list();
-		if (!history)
-		{
-		return 0;
-		}
-		int i = 0;
-		for (; history[i] ; ++i)
-		  {
-		   printf("[%d] %s\n", i + history_base, history[i]->line);
-		  }
-		return 0;
+            HIST_ENTRY **history = history_list();
+            if (!history)
+            {
+                return 0;
+            }
+            int i = 0;
+            for (; history[i]; ++i)
+            {
+                printf("[%d] %s\n", i + history_base, history[i]->line);
+            }
+            return 0;
         }
-        else if(strcmp("jobs", token)==0){
-              display_update_jobs();
-        return 1;
+        else if (strcmp("jobs", token) == 0)
+        {
+            display_jobs();
         }
         else
         {
+            pid_t pid;
+            pid = fork();
+            //int status;
+            if (pid < 0)
             {
-    pid_t pid;
-    pid = fork();
-    //int status;
-    if (pid < 0)
-    {
-        err_sys("fork error");
-    }
-    else if (pid == -1)
-    {
-        fprintf(stderr, "error no good");
-    }else if(pid == 0){
-        char **commandArgs = (char **)(MAXARGS * sizeof(char));
-        const char *bufpointer = token;
-        commandArgs = chop_line_exec(bufpointer);
-         index_of_ampersand = is_background_job(commandArgs);
-        printf("amberand: %d",index_of_ampersand);
-         close(error_pipe[0]);
-         if (index_of_ampersand >= 0)
+                err_sys("fork error");
+            }
+            else if (pid == -1)
             {
-                start_background_job(line, commandArgs, index_of_ampersand);
-                write(error_pipe[1], FAIL, strlen(FAIL)+1);
-                //give write time to propagate
-                usleep(1000);
+                fprintf(stderr, "error no good");
+            }
+            else if (pid == 0)
+            {
+                char **commandArgs = (char **)(MAXARGS * sizeof(char));
+                // const char *bufpointer = token;
+                commandArgs = get_command(line);
+                index_of_ampersand = is_background_job(commandArgs);
+                close(error_pipe[0]);
+                if (index_of_ampersand >= 0)
+                {
+                    start_background_job(commandArgs, index_of_ampersand);
+                    write(error_pipe[1], FAIL, strlen(FAIL) + 1);
+                    usleep(1000);
+                }
+                else
+                {
+                    start_job(commandArgs);
+                }
+                exit(EXIT_FAILURE);
+            }
+            if (index_of_ampersand < 0)
+            {
+                pid = waitpid(pid, &state, 0);
             }
             else
             {
-        execvp(commandArgs[0], commandArgs);
-        free(commandArgs);
-        kill(getpid(), 1);
+                sleep(1);
+                if (!strstr(child_status, FAIL))
+                    log_background_job(pid, line);
+
+                int i;
+                for (i = 0; i < MAXLINE; i++)
+                    child_status[i] = 0;
             }
-//            free_command_and_Line(line, tokenized_command_and_args);
-            exit(EXIT_FAILURE);
         }
-    
-    if (index_of_ampersand < 0)
-    {
-        pid = waitpid(pid, &state, 0);
-    }else{
-        sleep(1);
-
-            if (!strstr(child_status, FAIL))
-                log_background_job(pid, line);
-            
-            int i;for (i=0; i<MAXLINE; i++) child_status[i] = 0;    
-        }            
-
-    }
-}
-        
     }
 
     exit(0);
@@ -202,6 +187,37 @@ char **chop_line_exec(const char *line)
     }
 
     return rval;
+}
+
+char **get_command(char *line)
+{
+    char *next;
+    const char *delim = " ";
+    int cnt = 0;
+    char **tokens;
+
+    char *copy = (char *)malloc(strlen(line) * sizeof(char));
+    strcpy(copy, line);
+
+    tokens = (char **)malloc(MAXARGS * sizeof(char *));
+
+    next = strtok(copy, delim);
+    while (next)
+    {
+        tokens[cnt] = (char *)malloc(strlen(next) + 1);
+        char *token = tokens[cnt++];
+        strcpy(sanitize(token), next);
+        next = strtok(NULL, delim);
+    }
+    tokens[cnt] = (char *)0;
+
+    free(copy);
+    return tokens;
+}
+
+char *sanitize(char *token)
+{
+    return token;
 }
 
 void change()
@@ -246,6 +262,5 @@ void version()
     printf("mydash: Version 1: Revision %s (author: User TuckerFerguson@onyx)\n", v);
     exit(1);
 }
-
 
 /* vim: set ts=4: */

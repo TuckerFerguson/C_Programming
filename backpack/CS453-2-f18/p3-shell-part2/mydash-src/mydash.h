@@ -36,12 +36,11 @@ void	err_sys(const char *, ...);
 char **parseInput(char *s, char *delimiter, int *numTokens);
 const char* git_version(void);
 
-void display_update_jobs(void);
+void display_jobs(void);
 void remove_ampersand(char ** command_and_args, int index_of_ampersand);
-char** get_tokenized_command(char * line);
+char** get_command(char * line);
 int is_background_job(char** tokenized_command_and_args);
 void remove_ampersand(char** command_and_args, int index_of_ampersand);
-int handle_parent_commands(char*line, char** command_and_args);
 void display_updated_jobs(void);
 int status(int pid);
 #endif	/* __MYDASH_H */
