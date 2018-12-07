@@ -58,21 +58,22 @@ int buddy_init(size_t size) {
         errno = ENOMEM;
         return FALSE;
     }
-    if(size == 0){
-        pool.size = DEFAULT_MAX_MEM_SIZE;
-        pool.start = sbrk(1L << pool.size);
-        pool.start = sbrk(pool.size);
-    }
+    // if(size == 0){
+    //     pool.size = DEFAULT_MAX_MEM_SIZE;
+    //     pool.start = sbrk(1LL << pool.size);
+    //     pool.start = sbrk(pool.size);
+    // }
+    // else 
     if(size < DEFAULT_MAX_MEM_SIZE && size >= 1){
         pool.size = DEFAULT_MAX_MEM_SIZE;
 //make sure to change from int to long int        
-        pool.start = sbrk(1L << pool.size);
+        pool.start = sbrk(1LL << pool.size);
         pool.start = sbrk(pool.size);
     } else {
         pool.lgsize = power2(size);
         pool.size = size;
 //make sure to change from int to long int
-        pool.start = sbrk(1L << pool.size);
+        pool.start = sbrk(1LL << pool.size);
     }
     if( errno == ENOMEM || pool.size < 0){
         perror("Could not allocate pool");
@@ -150,6 +151,8 @@ void *buddy_realloc(void *ptr, size_t size)
 
 void buddy_free(void *ptr) 
 {
+    struct block_header * start_block = ptr;
+    printf("start = %p\n",start_block);
 }
 
 
