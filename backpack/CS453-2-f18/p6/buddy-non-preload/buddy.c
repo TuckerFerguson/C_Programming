@@ -11,12 +11,9 @@
  * @author Tucker Ferguson & Shane Panter
  * 
  */
- 
 #include "buddy.h"
 int initialized = FALSE;
 
-int next_Index(int k);
-int next_Power(size_t a);
 int power2(long int k);
 /* the header for an available block */
 struct block_header {
@@ -32,9 +29,12 @@ const int UNUSED = -1;
 
 /* supports memory upto 2^(MAX_KVAL-1) (or 64 GB) in size */
 #define  MAX_KVAL  37
+#define MIN_KVAL 5
+#define BLOCK_SIZE sizeof(struct block_header)
 
 /* deafult memory allocation is 512MB */
 const size_t DEFAULT_MAX_MEM_SIZE = 512*1024*1024;
+const size_t DEFAULT_MIN_MEM_SIZE = 32;
 
 
 /* A static structure stores the table of pointers to the lists in the buddy system.  */
@@ -48,57 +48,72 @@ struct pool {
 
 //This code was derived from the examples included in ~/examples/memory-magament as well as googling some syntax
 int buddy_init(size_t size) { 
-  int i;
+  if(initialized)
+		return TRUE;
 
-    if(initialized){
-        return TRUE;
-    }
-
-    if(size > DEFAULT_MAX_MEM_SIZE){
-        errno = ENOMEM;
+	int i = 0;
+	int logvalue = 1;
+	int finalS = 1;	
+	if(size < 0){
+		errno = ENOMEM;
         return FALSE;
     }
-    // if(size == 0){
-    //     pool.size = DEFAULT_MAX_MEM_SIZE;
-    //     pool.start = sbrk(1LL << pool.size);
-    //     pool.start = sbrk(pool.size);
-    // }
-    // else 
-    if(size < DEFAULT_MAX_MEM_SIZE && size >= 1){
-        pool.size = DEFAULT_MAX_MEM_SIZE;
-//make sure to change from int to long int        
-        pool.start = sbrk(1LL << pool.size);
-        pool.start = sbrk(pool.size);
-    } else {
-        pool.lgsize = power2(size);
-        pool.size = size;
-//make sure to change from int to long int
-        pool.start = sbrk(1LL << pool.size);
-    }
-    if( errno == ENOMEM || pool.size < 0){
-        perror("Could not allocate pool");
+	if(size == 0)
+	{
+		pool.lgsize = 29;
+		pool.size = logvalue << 29;
+	}	
+	else
+	{
+		logvalue = power2(size);
+		if(logvalue < 32)
+        {
+			logvalue = DEFAULT_MIN_MEM_SIZE;	
+        }
+		for(i = 0;i < logvalue;i++)
+		{	
+			finalS = finalS * 2; 
+		}		
+		pool.lgsize = logvalue;
+		pool.size = (size_t)finalS;
+	}
+
+    if(pool.size < 0 || errno == ENOMEM){
+        perror("Could not allocate the pool");
         exit(1);
-    } 
-    for(i = 0; i < MAX_KVAL; i++){
-        pool.avail[i].next = &pool.avail[i];
-        pool.avail[i].prev = &pool.avail[i];
-        pool.avail[i].tag = UNUSED;
-        pool.avail[i].kval = i;
     }
 
-    struct block_header *ptr = (struct block_header *) pool.start;
-    ptr->tag = FREE;
-    ptr->kval = pool.lgsize;
+	finalS= 2;
+	for(i = 0;i < MAX_KVAL;i++)
+	{
+		pool.avail[i].prev = NULL;
+		pool.avail[i].next = NULL;
+		pool.avail[i].tag = UNUSED;
+		pool.avail[i].kval = i;
+	}
+	pool.start = sbrk(pool.size);
+	
+	if(pool.start == (void*) -1)
+	{
+		errno = ENOMEM;
+		return FALSE;
+	}
 
-    ptr->next = &pool.avail[ptr->kval];
-    ptr->prev = &pool.avail[ptr->kval];
+	printf("pool start: %p\n", pool.start);
 
-    pool.avail[ptr->kval].next = ptr->prev;
-    pool.avail[ptr->kval].prev = ptr->next;
+	struct block_header* temp_header = (struct block_header*) pool.start;
 
-    pool.avail[pool.lgsize] = *ptr;
-    initialized = TRUE;
-    return TRUE;
+	temp_header->prev = &pool.avail[pool.lgsize];
+	temp_header->next = NULL;
+	temp_header->kval = pool.lgsize;
+	temp_header->tag = FREE;
+
+	pool.avail[pool.lgsize].next = temp_header;
+	pool.avail[pool.lgsize].tag = FREE;
+
+	initialized = TRUE;
+	printBuddyLists();
+	return TRUE;
 }
 
 
@@ -170,32 +185,6 @@ void printBuddyLists()
 }
 
 //Method for ensuring that the base address is a power of 2
-
-int nextIndex(int size){
-    int i =0;
-    for(i = size; i <= MAX_KVAL; i++){
-        if(pool.avail[i].tag != UNUSED){
-            return i;
-        }
-    }
-    return MAX_KVAL;
-}
-int nextPower(size_t size){
-
-	int i=0;
-    int j=0;
-	while(i < DEFAULT_MAX_MEM_SIZE)
-	{
-		if(size < i){
-			return j-1;
-		}else{
-			i = 1<<j;
-			j++;
-		}
-	}
-	return MAX_KVAL;
-}
-
 int power2(long int size) {
     unsigned int counter = 0;
     size--;
