@@ -1,9 +1,9 @@
 # C_Programming
 This contains C that was written during my time at Boise State Tutor and Student.
 
-Introduction to System Programming:
-~/CS253-1-f17/p3 --- My implementation of a linux shell written in C
-~/CS253-1-f17/ring-buffer --- Ring buffer that prints out log messages in intervals of 5
+Introduction to System Programming: /n
+~/CS253-1-f17/p3 --- My implementation of a linux shell written in C /n
+~/CS253-1-f17/ring-buffer --- Ring buffer that prints out log messages in intervals of 5 /n
 ~/CS253-1-f17/linked-list --- C implementation of a linked list, as well as tests
 
 Operating Systems:
