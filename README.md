@@ -1,5 +1,5 @@
 # C_Programming
-This contains C that was written during my time at Boise State Tutor and Student.
+This contains C that was written during my time at Boise State as lab assistant, tutor and student.
 
 Introduction to System Programming: 
 
