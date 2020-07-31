@@ -1,5 +1,5 @@
 # C_Programming
-This contains C that was written during my time at Boise State as lab assistant, tutor and student.
+
 
 Access via: backpack directory
 
@@ -10,6 +10,7 @@ Introduction to System Programming:
 ~/CS253-1-f17/ring-buffer --- Ring buffer that prints out log messages in intervals of 5 
 
 ~/CS253-1-f17/linked-list --- C implementation of a linked list, as well as tests
+
 
 Operating Systems:
 
