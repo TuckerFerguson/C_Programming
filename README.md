@@ -1,6 +1,8 @@
 # C_Programming
 This contains C that was written during my time at Boise State as lab assistant, tutor and student.
 
+Access via: backpack directory
+
 Introduction to System Programming: 
 
 ~/CS253-1-f17/p3 --- My implementation of a linux shell written in C 
